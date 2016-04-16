@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PhysicsAdvertisements.WebForms.Web.Forms.Home {
+namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates {
     
     
-    public partial class Home {
+    public partial class AdvertisementsSearch {
         
         /// <summary>
-        /// AdvertisementsSearch control.
+        /// PhysicsAreaControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearch;
+        protected global::System.Web.UI.WebControls.DropDownList PhysicsAreaControl;
         
         /// <summary>
-        /// FeedbackContentControl control.
+        /// CategoryControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FeedbackContentControl;
+        protected global::System.Web.UI.WebControls.DropDownList CategoryControl;
         
         /// <summary>
-        /// SendFeedbackControl control.
+        /// SearchBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SendFeedbackControl;
+        protected global::System.Web.UI.WebControls.Button SearchBtn;
     }
 }

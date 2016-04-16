@@ -10,10 +10,9 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapPageRoute("homeIndex", "Home/Index.aspx", "~/Views/Home/Home.aspx");
-            routes.MapPageRoute("homeHome", "Home/Home.aspx", "~/Views/Home/Home.aspx");
-            routes.MapPageRoute("home", "Home/", "~/Views/Home/Home.aspx");
-
+            routes.MapPageRoute("homeIndex", "Home/Index.aspx", "~/Forms/Home/Home.aspx");
+            routes.MapPageRoute("homeHome", "Home/Home.aspx", "~/Forms/Home/Home.aspx");
+            routes.MapPageRoute("home", "Home/", "~/Forms/Home/Home.aspx");
 
         }
     }

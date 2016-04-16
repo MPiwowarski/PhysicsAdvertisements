@@ -113,6 +113,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Styles\Shared\Site.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -129,10 +130,13 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx" />
+    <Content Include="UserControls\AdvertisementsSearch\Layouts\AdvertisementsSearch.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +162,15 @@
     </Compile>
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx.cs">
+      <DependentUpon>AdvertisementsSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx.designer.cs">
+      <DependentUpon>AdvertisementsSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdvertisementsSearch\Presenters\AdvertisementsSearchPresenter.cs" />
+    <Compile Include="UserControls\AdvertisementsSearch\Views\IAdvertisementsSearchView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhysicsAdvertisements.Model\PhysicsAdvertisements.Model.csproj">
@@ -171,8 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Scripts\" />
-    <Folder Include="App_Styles\" />
-    <Folder Include="UserControls\AdvertisementsSearch\" />
+    <Folder Include="UserControls\AdvertisementsSearch\Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

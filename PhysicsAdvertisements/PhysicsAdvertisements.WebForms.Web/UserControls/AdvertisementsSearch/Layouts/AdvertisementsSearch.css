@@ -1,0 +1,24 @@
+﻿.advertisements-search {
+    overflow:hidden;
+}
+
+.advertisements-search ul {
+    display:block;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.advertisements-search ul li ul {
+    display:table;
+    margin:0;
+    padding:0;
+}
+
+.advertisements-search ul li ul li{
+    display:table-column;
+    float:left;
+    margin:0;
+    padding:0;
+}
+
