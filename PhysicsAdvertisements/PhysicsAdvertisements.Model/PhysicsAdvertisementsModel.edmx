@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PhysicsAdvertisementsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PhysicsAdvertisementsModelStoreContainer">
+    <EntitySet Name="PhysicsAreasDictionary" EntityType="PhysicsAdvertisementsModel.Store.PhysicsAreasDictionary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhysicsAreas" EntityType="PhysicsAdvertisementsModel.Store.PhysicsAreas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="PhysicsAdvertisementsModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Advertisement" EntityType="PhysicsAdvertisementsModel.Store.Advertisement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="PhysicsAdvertisementsModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PhysicsAreasAdvertisement" Association="PhysicsAdvertisementsModel.Store.PhysicsAreasAdvertisement">
+      <End Role="PhysicsAreas" EntitySet="PhysicsAreas" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="UserAdvertisement" Association="PhysicsAdvertisementsModel.Store.UserAdvertisement">
+      <End Role="User" EntitySet="User" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryAdvertisement" Association="PhysicsAdvertisementsModel.Store.CategoryAdvertisement">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PhysicsAreasDictionary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhysicsAreas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birthday" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddedDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="PhysicsAreasId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="PhysicsAreasAdvertisement">
+    <End Role="PhysicsAreas" Type="PhysicsAdvertisementsModel.Store.PhysicsAreas" Multiplicity="1" />
+    <End Role="Advertisement" Type="PhysicsAdvertisementsModel.Store.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicsAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="PhysicsAreasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAdvertisement">
+    <End Role="User" Type="PhysicsAdvertisementsModel.Store.User" Multiplicity="1" />
+    <End Role="Advertisement" Type="PhysicsAdvertisementsModel.Store.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryAdvertisement">
+    <End Role="Category" Type="PhysicsAdvertisementsModel.Store.Category" Multiplicity="1" />
+    <End Role="Advertisement" Type="PhysicsAdvertisementsModel.Store.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhysicsAdvertisementsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhysicsAdvertisementsDbContext" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="PhysicsAreasDictionary" EntityType="PhysicsAdvertisementsModel.PhysicsAreasDictionary" />
+          <EntitySet Name="PhysicsAreas" EntityType="PhysicsAdvertisementsModel.PhysicsAreas" />
+          <EntitySet Name="User" EntityType="PhysicsAdvertisementsModel.User" />
+          <EntitySet Name="Advertisement" EntityType="PhysicsAdvertisementsModel.Advertisement" />
+          <EntitySet Name="Category" EntityType="PhysicsAdvertisementsModel.Category" />
+          <AssociationSet Name="PhysicsAreasAdvertisement" Association="PhysicsAdvertisementsModel.PhysicsAreasAdvertisement">
+            <End Role="PhysicsAreas" EntitySet="PhysicsAreas" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="UserAdvertisement" Association="PhysicsAdvertisementsModel.UserAdvertisement">
+            <End Role="User" EntitySet="User" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryAdvertisement" Association="PhysicsAdvertisementsModel.CategoryAdvertisement">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PhysicsAreasDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhysicsAreas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Advertisement" Relationship="PhysicsAdvertisementsModel.PhysicsAreasAdvertisement" FromRole="PhysicsAreas" ToRole="Advertisement" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" />
+          <Property Name="Age" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" />
+          <Property Name="Birthday" Type="String" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <NavigationProperty Name="Advertisement" Relationship="PhysicsAdvertisementsModel.UserAdvertisement" FromRole="User" ToRole="Advertisement" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddedDate" Type="String" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="PhysicsAreasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PhysicsAreas" Relationship="PhysicsAdvertisementsModel.PhysicsAreasAdvertisement" FromRole="Advertisement" ToRole="PhysicsAreas" />
+          <NavigationProperty Name="User" Relationship="PhysicsAdvertisementsModel.UserAdvertisement" FromRole="Advertisement" ToRole="User" />
+          <NavigationProperty Name="Category" Relationship="PhysicsAdvertisementsModel.CategoryAdvertisement" FromRole="Advertisement" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Advertisement" Relationship="PhysicsAdvertisementsModel.CategoryAdvertisement" FromRole="Category" ToRole="Advertisement" />
+        </EntityType>
+        <Association Name="PhysicsAreasAdvertisement">
+          <End Type="PhysicsAdvertisementsModel.PhysicsAreas" Role="PhysicsAreas" Multiplicity="1" />
+          <End Type="PhysicsAdvertisementsModel.Advertisement" Role="Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicsAreas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="PhysicsAreasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserAdvertisement">
+          <End Type="PhysicsAdvertisementsModel.User" Role="User" Multiplicity="1" />
+          <End Type="PhysicsAdvertisementsModel.Advertisement" Role="Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryAdvertisement">
+          <End Type="PhysicsAdvertisementsModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="PhysicsAdvertisementsModel.Advertisement" Role="Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhysicsAdvertisementsModelStoreContainer" CdmEntityContainer="PhysicsAdvertisementsDbContext">
+    <EntitySetMapping Name="PhysicsAreasDictionary">
+      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.PhysicsAreasDictionary)">
+        <MappingFragment StoreEntitySet="PhysicsAreasDictionary">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhysicsAreas">
+      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.PhysicsAreas)">
+        <MappingFragment StoreEntitySet="PhysicsAreas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisement">
+      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.Advertisement)">
+        <MappingFragment StoreEntitySet="Advertisement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="PhysicsAreasId" ColumnName="PhysicsAreasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.Category)">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

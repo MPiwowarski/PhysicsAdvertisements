@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d83110a06ef400b85d6cfa1b78b822f" Name="Diagram1" ZoomLevel="89" >
+        <EntityTypeShape EntityType="PhysicsAdvertisementsModel.PhysicsAreasDictionary" Width="1.5" PointX="1.375" PointY="5.25" />
+        <EntityTypeShape EntityType="PhysicsAdvertisementsModel.PhysicsAreas" Width="1.5" PointX="1.75" PointY="2.25" />
+        <EntityTypeShape EntityType="PhysicsAdvertisementsModel.User" Width="1.5" PointX="7.625" PointY="1" />
+        <EntityTypeShape EntityType="PhysicsAdvertisementsModel.Advertisement" Width="1.5" PointX="4.5" PointY="2.25" />
+        <EntityTypeShape EntityType="PhysicsAdvertisementsModel.Category" Width="1.5" PointX="7.625" PointY="4.375" />
+        <AssociationConnector Association="PhysicsAdvertisementsModel.PhysicsAreasAdvertisement" />
+        <AssociationConnector Association="PhysicsAdvertisementsModel.UserAdvertisement" />
+        <AssociationConnector Association="PhysicsAdvertisementsModel.CategoryAdvertisement" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
