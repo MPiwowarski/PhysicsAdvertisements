@@ -1,0 +1,21 @@
+﻿.feedback-form{
+    width:400px;
+}
+
+.FeedbackContentControl{
+    width:400px;
+    height:400px;
+}
+
+.feedback-form p{
+    max-width:400px;
+    text-align: justify;
+}
+
+.feedback-form ul li{
+    display:block;
+}
+
+.feedback-form .btn{
+    float:left;
+}
