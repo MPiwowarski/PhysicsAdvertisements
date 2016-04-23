@@ -48,9 +48,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" class="active">Home</a></li>
-
-                    <li class="dropdown">
+                    <li><a href="/Home" >Home</a></li>
+                    <li><a href="/Home/Contact" >Contact</a></li>
+                    <li><a href="/Home/Help" >Help</a></li>
+                   <%-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ogłoszenia <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" class="active">Home</a></li>
@@ -58,7 +59,7 @@
                             <li class="divider"></li>
                             <li><a href="#" class="active">Home</a></li>
                         </ul>
-                    </li>
+                    </li>--%>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -73,14 +74,14 @@
         </div>
     </div>
 
-
-    <form id="form1" style="padding-top:50px;"  runat="server"  class="container body-content" >
-        <div>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
-
+    <div class="container">
+        <form id="form1" style="padding-top: 50px;" runat="server" class="container body-content">
+            <div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
 
     <div class="container body-content">
         <hr />
@@ -92,3 +93,7 @@
     <script src="../../Scripts/bootstrap.js"></script>
 </body>
 </html>
+
+
+<%--******  FREE LICENSES   *****
+used eCommerce Icon Set from design by "Freepik.com", downloaded from https://speckyboy.com/2016/04/20/free-flat-ecommerce-icon-set/--%>

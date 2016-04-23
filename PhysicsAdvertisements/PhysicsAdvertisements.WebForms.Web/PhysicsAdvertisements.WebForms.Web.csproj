@@ -102,7 +102,119 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Images\Home\AnMechanics.jpg" />
+    <Content Include="App_Images\Home\MichioKaku.jpg" />
+    <Content Include="App_Images\Home\Particle Physics.jpg" />
+    <Content Include="App_Images\Home\Physics.jpg" />
+    <Content Include="App_Scripts\Home\Home.js" />
+    <Content Include="App_Styles\Account\Login.css" />
+    <Content Include="App_Styles\Home\Help.css" />
     <Content Include="App_Styles\Home\Home.css" />
+    <Content Include="ecommerce-icon-set-freepik\Cover E-commerce.jpg" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\administrator.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\avatar.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bag.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bank_check.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bank_terminal.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\barcode.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\basket.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\box_office.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\calculator.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cart.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cart_with_box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cashbox.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\check.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\clock.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\closed_wallet.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\coin.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\coupon.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_cards.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_card_back.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_card_face.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\discount.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\filter.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\gift.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\handset.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\hanger.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\hourglass.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\info.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\libra.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\loupe.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\mail_box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\market.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\max.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\messages.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\mobile_payment.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\money.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\monitor.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\open_wallet.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\package.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\pickup_truck.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\pin.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\plane.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\plate.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\purse.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\receiving_money.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\scooter.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\t-shirt.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\tag.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\truck.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\website_store.png" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\1.-cart.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\10.-box office.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\11.-closed wallet.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\12.-open wallet.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\13.-purse.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\14.-coin.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\15.-money.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\16.-hourglass.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\17.-receiving money.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\18.-bank check.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\18.-credit card face.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\2.-basket.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\20.-credit card back.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\21.-credit cards.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\22.-mobile payment.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\23.-bank terminal.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\24.-cashbox.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\25.-check.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\26.-barcode.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\27.-calculator.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\28.-t-shirt.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\29.-libra.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\3.-package.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\30.-nag.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\31.-scooter.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\32.-pickup truck.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\33.-truck.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\34.-plane.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\35.-hanger.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\36.-info.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\37.-handset.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\38.-administrator.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\39.-market.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\4.-bag.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\40.-plate.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\41.-monitor.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\42.-website store.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\43.-avatar.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\44.-messages.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\45.-pin.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\46.-clock.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\47.-loupe.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\48.-filter.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\49.-coupon.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\5.-gift.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\50.-discount.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\6.-box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\7.-cart with box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\8.-mail box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\9.-map.svg" />
+    <Content Include="Forms\Account\Login.aspx" />
+    <Content Include="Forms\Account\Register.aspx" />
+    <Content Include="Forms\Home\Contact.aspx" />
+    <Content Include="Forms\Home\Help.aspx" />
     <Content Include="packages.config" />
     <Content Include="Forms\Shared\Site.Master" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -143,6 +255,34 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityWebFormsBootstrapper.cs" />
     <Compile Include="App_Start\UnityWebFormsStart.cs" />
+    <Compile Include="Forms\Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,7 +323,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Scripts\" />
     <Folder Include="UserControls\AdvertisementsSearch\Data\" />
   </ItemGroup>
   <PropertyGroup>

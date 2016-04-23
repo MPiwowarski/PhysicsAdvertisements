@@ -1,9 +1,12 @@
 ﻿.advertisements-search {
     overflow:hidden;
+    padding:10px;
 }
 
 .advertisements-search table td{
-    padding:30px ;
+    padding-top:30px ;
+    padding-bottom:30px ;
+    padding-right:0;
 }
 
 .advertisements-search ul {
@@ -20,9 +23,9 @@
 }
 
 .SearchBtn{
-
-
     width:160px;
 }
 
-
+.combo-box{
+    width:150px;
+}

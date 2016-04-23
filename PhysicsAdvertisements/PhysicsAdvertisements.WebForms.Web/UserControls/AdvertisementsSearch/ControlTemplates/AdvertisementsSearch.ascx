@@ -9,7 +9,7 @@
                 <ul>
                     <li>Physics areas: </li>
                     <li>
-                        <asp:DropDownList ID="PhysicsAreaControl" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="PhysicsAreaControl" runat="server" CssClass="combo-box"></asp:DropDownList>
                     </li>
                 </ul>
             </td>
@@ -17,7 +17,7 @@
                 <ul>
                     <li>Category: </li>
                     <li>
-                        <asp:DropDownList ID="CategoryControl" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="CategoryControl" runat="server" CssClass="combo-box"></asp:DropDownList>
                     </li>
                 </ul>
             </td>

@@ -13,6 +13,20 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
             routes.MapPageRoute("homeIndex", "Home/Index.aspx", "~/Forms/Home/Home.aspx");
             routes.MapPageRoute("homeHome", "Home/Home.aspx", "~/Forms/Home/Home.aspx");
             routes.MapPageRoute("home", "Home/", "~/Forms/Home/Home.aspx");
+            
+            routes.MapPageRoute("homeContact", "Home/Contact.aspx", "~/Forms/Home/Contact.aspx");
+            routes.MapPageRoute("Contact", "Home/Contact", "~/Forms/Home/Contact.aspx");
+
+            routes.MapPageRoute("homeHelp", "Home/Help.aspx", "~/Forms/Home/Help.aspx");
+            routes.MapPageRoute("Help", "Home/Help", "~/Forms/Home/Help.aspx");
+
+            //*****     ACCOUNT     *****
+            routes.MapPageRoute("accountRegister", "Account/Register.aspx", "~/Forms/Account/Register.aspx");
+            routes.MapPageRoute("Register", "Account/Register", "~/Forms/Account/Register.aspx");
+
+            routes.MapPageRoute("accountLogin", "Account/Login.aspx", "~/Forms/Account/Login.aspx");
+            routes.MapPageRoute("Login", "Account/Login", "~/Forms/Account/Login.aspx");
+
 
         }
     }

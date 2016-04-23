@@ -19,3 +19,53 @@
 .feedback-form .btn{
     float:left;
 }
+
+/******     JUMBOTRON    ******/
+.jumbotron p{
+    text-align:justify;
+}
+
+.register-link a{
+    font-size:20px;
+}
+
+/******     CAROUSEL    ******/
+.carousel-inner img {
+	width:100%;
+  	height:100%;
+}
+
+#myCarousel {
+	font-size:90%;
+}
+
+.carousel-controls-mini {
+
+}
+
+.carousel-controls-mini > a {
+	border:1px solid #eee;
+  	width:20px;
+    display:block;
+    float:left;
+    text-align:center;
+}
+/******     SEARCH-CONTAINER   ******/
+.search-container .jumbotron{
+    background-color:#fafafa;
+    padding:0;
+}
+
+.comments-container p {
+    text-align: justify;
+}
+
+/******     COMMENTS-CONTAINER   ******/
+.comments-container img{
+    display: block;
+    margin: 0 auto;
+}
+
+.extra-money p{
+    text-align: justify;
+}
