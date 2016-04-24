@@ -4,6 +4,18 @@
   background-color: #eee;
 }
 
+
+.controls-container{
+    padding:30px;
+    background-color:white;
+    border-radius:5px;
+}
+
+.register{
+    padding-top:10px;
+    text-align:center;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -42,3 +54,4 @@
 a {
     margin-left:0px;
 }
+

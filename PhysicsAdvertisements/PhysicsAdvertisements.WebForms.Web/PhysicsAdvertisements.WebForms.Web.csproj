@@ -108,9 +108,11 @@
     <Content Include="App_Images\Home\Physics.jpg" />
     <Content Include="App_Scripts\Home\Home.js" />
     <Content Include="App_Styles\Account\Login.css" />
+    <Content Include="App_Styles\Home\Contact.css" />
     <Content Include="App_Styles\Home\Help.css" />
     <Content Include="App_Styles\Home\Home.css" />
     <Content Include="ecommerce-icon-set-freepik\Cover E-commerce.jpg" />
+    <Content Include="ecommerce-icon-set-freepik\New\avatar girl.png" />
     <Content Include="ecommerce-icon-set-freepik\PNG\administrator.png" />
     <Content Include="ecommerce-icon-set-freepik\PNG\avatar.png" />
     <Content Include="ecommerce-icon-set-freepik\PNG\bag.png" />

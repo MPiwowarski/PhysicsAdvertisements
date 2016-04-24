@@ -75,7 +75,7 @@
     </div>
 
     <div class="container">
-        <form id="form1" style="padding-top: 50px;" runat="server" class="container body-content">
+        <form id="form1" style="padding:0; padding-top: 50px;" runat="server" class="container body-content">
             <div>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>

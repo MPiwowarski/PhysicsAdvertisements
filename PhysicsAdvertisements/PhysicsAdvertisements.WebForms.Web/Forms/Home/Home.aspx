@@ -18,7 +18,7 @@
             <h1>Welcome in our service!</h1>
 
             <p class="description">
-                Need help in physic? You came to the right place! Here you can find a teacher or create your own advertisement with full description about your problem and publicate it.
+                Need help in physics? You came to the right place! Here you can find a teacher or create your own advertisement with full description about your problem and publicate it.
                 All you have to do is just register! Don't wait and try it now for free!
 
             </p>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="comments-container">
                     <div class="col-xs-6 col-lg-6">
-                        <img class="img-circle" width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/PNG/avatar.png" />
+                        <img class="img-circle" width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/New/avatar girl.png" />
                         <h2>Jennifer Moss</h2>
                         <p>I love to cooperate with Physics Advertisements service. Everyday I help almost ten people with theirs homework. I'm happy because I always wanted to earn money helping people.
                             Everyday I'm working as a teacher in high school and in free time I'm helping people with physics. During teaching others you can also learned a lot. Trust me. I recommend this service for everyone.

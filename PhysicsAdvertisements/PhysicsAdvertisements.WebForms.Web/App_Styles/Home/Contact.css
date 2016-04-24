@@ -1,0 +1,14 @@
+﻿.contact{
+    margin:0;
+    padding:0;
+}
+
+.contact-items{
+    padding:30px;
+    padding-top:10px;
+    background-color:#e1dfdf;
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
