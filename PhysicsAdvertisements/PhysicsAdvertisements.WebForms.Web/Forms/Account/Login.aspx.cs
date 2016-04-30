@@ -1,6 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using PhysicsAdvertisements.Repository.Repo;
-using PhysicsAdvertisements.WebForms.Web.Presenters;
+using PhysicsAdvertisements.WebForms.Web.Presenters.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +37,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Podlaczyc projekt Validatable
-            _loginPresenter.LoginControl_Click();
+           
         }
         #endregion
 
@@ -71,7 +70,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-
+            _loginPresenter.LoginControl_Click();
         }
     }
 }

@@ -82,16 +82,16 @@
                     <!-- Carousel items -->
                     <div class="carousel-inner">
                         <div class="active item" data-slide-number="0">
-                          <img class="img-rounded" src="../../App_Images/Home/MichioKaku.jpg" />
+                          <img class="img-rounded img-responsive" src="../../App_Images/Home/MichioKaku.jpg" />
                         </div>
                         <div class="item" data-slide-number="1">  
-                            <img class="img-rounded" src="../../App_Images/Home/Particle%20Physics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Particle%20Physics.jpg" />
                         </div>
                         <div class="item" data-slide-number="2">
-                            <img class="img-rounded" src="../../App_Images/Home/AnMechanics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/AnMechanics.jpg" />
                         </div>
                         <div class="item" data-slide-number="3">
-                            <img class="img-rounded" src="../../App_Images/Home/Physics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Physics.jpg" />
                         </div>                     
                     </div>
 

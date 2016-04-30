@@ -8,10 +8,7 @@
     <link href="../../App_Styles/Shared/Site.css" rel="stylesheet" />
     <link href="../../Content/themes/base/all.css" rel="stylesheet" /> <%--included calendar css--%>
 
-    <script src="../../Scripts/jquery-1.9.1.js"></script>
-    <script src="../../Scripts/jquery-ui-1.11.4.js"></script> <%--included calendar js--%>
-    <script src="../../Scripts/bootstrap.js"></script>
-
+ 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -98,6 +95,12 @@
 
 </body>
 </html>
+
+<%--jquery added in Global.asax--%>
+<script src="../../Scripts/jquery-1.9.1.js"></script>
+<script src="../../Scripts/jquery-ui-1.11.4.js"></script>
+<%--included calendar js--%>
+<script src="../../Scripts/bootstrap.js"></script>
 
 
 <%--******  FREE LICENSES   *****

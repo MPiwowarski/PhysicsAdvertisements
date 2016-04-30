@@ -57,6 +57,7 @@
     <Compile Include="Category.cs">
       <DependentUpon>PhysicsAdvertisementsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Enums\User.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IPhysicsAdvertisementsDbContext.cs" />
     <Compile Include="PhysicsAdvertisementsModel.Context.cs">

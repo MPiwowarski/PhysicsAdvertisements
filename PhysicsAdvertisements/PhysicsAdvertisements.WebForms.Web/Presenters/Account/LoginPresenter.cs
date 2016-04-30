@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PhysicsAdvertisements.WebForms.Web.Presenters
+namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 {
     public interface ILoginPresenter
     {
@@ -12,7 +12,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters
     }
 
 
-    public class LoginPresenter: ILoginPresenter
+    public class LoginPresenter : ILoginPresenter
     {
         private ILoginView _homeView;
 

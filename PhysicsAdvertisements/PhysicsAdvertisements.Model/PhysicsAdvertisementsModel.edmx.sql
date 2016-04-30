@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/30/2016 10:36:55
+-- Date Created: 04/30/2016 19:40:13
 -- Generated from EDMX file: D:\PhysicsAdvertisementsRepo\PhysicsAdvertisements\PhysicsAdvertisements.Model\PhysicsAdvertisementsModel.edmx
 -- --------------------------------------------------
 
@@ -72,10 +72,10 @@ CREATE TABLE [dbo].[User] (
     [Surname] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [PhoneNumber] nvarchar(max)  NOT NULL,
-    [Birthday] datetime  NULL,
+    [Birthday] datetime  NOT NULL,
     [Login] nvarchar(max)  NOT NULL,
     [Password] nvarchar(max)  NOT NULL,
-    [Gender] nvarchar(max)  NOT NULL
+    [Gender] int  NOT NULL
 );
 GO
 

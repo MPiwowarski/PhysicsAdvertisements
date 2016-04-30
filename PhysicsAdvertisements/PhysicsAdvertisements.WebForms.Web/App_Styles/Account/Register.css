@@ -21,3 +21,8 @@
     width:100%; 
  
 }
+
+.validation-label{
+    color:red;
+    font-size:small;
+}

@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -293,6 +297,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperWebConfiguration.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityWebFormsBootstrapper.cs" />
     <Compile Include="App_Start\UnityWebFormsStart.cs" />
@@ -341,8 +346,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\Account\LoginPresenter.cs" />
+    <Compile Include="Presenters\Account\RegisterPresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
-    <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx.cs">
       <DependentUpon>AdvertisementsSearch.ascx</DependentUpon>
@@ -363,6 +369,10 @@
     <ProjectReference Include="..\PhysicsAdvertisements.Repository\PhysicsAdvertisements.Repository.csproj">
       <Project>{0917ed1e-c18d-4794-a17d-24b5fea5c901}</Project>
       <Name>PhysicsAdvertisements.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Validatable\Validatable.csproj">
+      <Project>{7050ac1a-174b-42e1-9f44-81c029eba322}</Project>
+      <Name>Validatable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

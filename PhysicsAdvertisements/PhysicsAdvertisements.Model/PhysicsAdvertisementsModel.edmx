@@ -47,10 +47,10 @@
     <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Birthday" Type="datetime" Nullable="true" />
+    <Property Name="Birthday" Type="datetime" Nullable="false" />
     <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Advertisement">
     <Key>
@@ -154,11 +154,11 @@
           <Property Name="Surname" Type="String" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" />
-          <Property Name="Birthday" Type="DateTime" Nullable="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" />
           <Property Name="Login" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
           <NavigationProperty Name="Advertisement" Relationship="PhysicsAdvertisementsModel.UserAdvertisement" FromRole="User" ToRole="Advertisement" />
-          <Property Name="Gender" Type="String" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Advertisement">
           <Key>
