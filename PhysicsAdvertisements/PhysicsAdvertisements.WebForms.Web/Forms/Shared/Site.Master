@@ -6,6 +6,12 @@
 <head runat="server">
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
     <link href="../../App_Styles/Shared/Site.css" rel="stylesheet" />
+    <link href="../../Content/themes/base/all.css" rel="stylesheet" /> <%--included calendar css--%>
+
+    <script src="../../Scripts/jquery-1.9.1.js"></script>
+    <script src="../../Scripts/jquery-ui-1.11.4.js"></script> <%--included calendar js--%>
+    <script src="../../Scripts/bootstrap.js"></script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -89,8 +95,7 @@
             <p>&copy; <%= DateTime.Now.Year.ToString() %> - Made by Marcin Piwowarski</p>
         </footer>
     </div>
-    <script src="../../Scripts/jquery-1.9.1.js"></script>
-    <script src="../../Scripts/bootstrap.js"></script>
+
 </body>
 </html>
 

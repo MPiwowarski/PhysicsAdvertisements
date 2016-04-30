@@ -24,7 +24,7 @@
             </p>
 
             <p class="register-link">
-                <a class="btn btn-lg btn-success" role="button" href="/Account/Login">Register today</a>
+                <a class="btn btn-lg btn-success" role="button" href="/Account/Register">Sign up today</a>
             </p>
         </div>
 

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/16/2016 12:26:19
+-- Date Created: 04/30/2016 10:36:55
 -- Generated from EDMX file: D:\PhysicsAdvertisementsRepo\PhysicsAdvertisements\PhysicsAdvertisements.Model\PhysicsAdvertisementsModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,35 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_PhysicsAreasAdvertisement]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Advertisement] DROP CONSTRAINT [FK_PhysicsAreasAdvertisement];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserAdvertisement]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Advertisement] DROP CONSTRAINT [FK_UserAdvertisement];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CategoryAdvertisement]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Advertisement] DROP CONSTRAINT [FK_CategoryAdvertisement];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[PhysicsAreasDictionary]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PhysicsAreasDictionary];
+GO
+IF OBJECT_ID(N'[dbo].[PhysicsAreas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PhysicsAreas];
+GO
+IF OBJECT_ID(N'[dbo].[User]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[User];
+GO
+IF OBJECT_ID(N'[dbo].[Advertisement]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Advertisement];
+GO
+IF OBJECT_ID(N'[dbo].[Category]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Category];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -46,12 +70,12 @@ CREATE TABLE [dbo].[User] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Surname] nvarchar(max)  NOT NULL,
-    [Age] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [PhoneNumber] nvarchar(max)  NOT NULL,
-    [Birthday] nvarchar(max)  NOT NULL,
+    [Birthday] datetime  NULL,
     [Login] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL,
+    [Gender] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -20,7 +20,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 
     public partial class Home : System.Web.UI.Page, IHomeView
     {
-        private HomePresenter _homePresenter;
+        private IHomePresenter _homePresenter;
 
         //Repositories
         private IUserRepo _userRepo;
@@ -30,6 +30,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
         private AdvertisementsSearchPresenter _advertisementsSearchPresenter;
         private IAdvertisementsSearchView _avertisementsSearchView;
 
+        #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
         {
             //Init HomePresenter
@@ -47,13 +48,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
             _userRepo.Context.PhysicsAreasDictionary.Add(tmp);
             _userRepo.Save();
         }
-       
-
-
-        #region **********************************   Page life cycle   **********************************
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
 
             if (FeedbackContent_Text != "")
             {

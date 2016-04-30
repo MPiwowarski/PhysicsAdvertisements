@@ -16,6 +16,11 @@
     text-align:center;
 }
 
+.controls-container img{
+    display: block;
+    margin: 0 auto;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -54,4 +59,5 @@
 a {
     margin-left:0px;
 }
+
 

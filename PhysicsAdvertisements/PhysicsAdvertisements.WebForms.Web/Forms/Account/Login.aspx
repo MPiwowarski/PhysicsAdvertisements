@@ -13,19 +13,22 @@
 
         <form class="form-signin" runat="server">
             <div class="controls-container">
+                <img  width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/New/login.png" />
                 <h2 class="form-signin-heading">Please sign in</h2>
                 <label class="sr-only" for="inputEmail">Email address</label>
-                <input id="inputEmail" class="form-control" type="email" autofocus="" required="" placeholder="Email address" />
+                <%--<input id="inputEmail" class="form-control" type="email" autofocus="" required="" placeholder="Email address" />--%>
+                <asp:TextBox ID="LoginControl" runat="server" CssClass="form-control"  placeholder="Login"></asp:TextBox>
                 <label class="sr-only" for="inputPassword">Password</label>
-                <input id="inputPassword" class="form-control" type="password" required="" placeholder="Password" />
+               <%-- <input id="inputPassword" class="form-control" type="password" required="" placeholder="Password" />--%>
+                <asp:TextBox ID="PasswordControl" runat="server" CssClass="form-control" type="password" placeholder="Password"></asp:TextBox>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" />
                         Remember me
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
+                <%--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>--%>
+                <asp:Button ID="SubmitControl" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Sign in" OnClick="SubmitControl_Click" />
                 <a href="/Home" class="btn-link">Back to Home page</a>
 
             </div>
