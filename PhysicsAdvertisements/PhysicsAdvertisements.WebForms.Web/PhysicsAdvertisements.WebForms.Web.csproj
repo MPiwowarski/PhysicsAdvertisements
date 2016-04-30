@@ -256,6 +256,7 @@
     <Content Include="ecommerce-icon-set-freepik\SVG\9.-map.svg" />
     <Content Include="Forms\Account\Login.aspx" />
     <Content Include="Forms\Account\Register.aspx" />
+    <Content Include="Forms\Account\UserData.aspx" />
     <Content Include="Forms\Home\Contact.aspx" />
     <Content Include="Forms\Home\Help.aspx" />
     <Content Include="packages.config" />
@@ -314,6 +315,13 @@
     </Compile>
     <Compile Include="Forms\Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Account\UserData.aspx.cs">
+      <DependentUpon>UserData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Account\UserData.aspx.designer.cs">
+      <DependentUpon>UserData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

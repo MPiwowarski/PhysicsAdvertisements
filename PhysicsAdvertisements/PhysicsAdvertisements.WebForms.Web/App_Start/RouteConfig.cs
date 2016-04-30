@@ -27,6 +27,8 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
             routes.MapPageRoute("accountLogin", "Account/Login.aspx", "~/Forms/Account/Login.aspx");
             routes.MapPageRoute("Login", "Account/Login", "~/Forms/Account/Login.aspx");
 
+            routes.MapPageRoute("accountUserData", "Account/UserData.aspx", "~/Forms/Account/UserData.aspx");
+            routes.MapPageRoute("UserData", "Account/User-Data", "~/Forms/Account/UserData.aspx");
 
         }
     }
