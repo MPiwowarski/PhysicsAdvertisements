@@ -51,6 +51,7 @@
     <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" DefaultValue="0" />
   </EntityType>
   <EntityType Name="Advertisement">
     <Key>
@@ -159,6 +160,7 @@
           <Property Name="Password" Type="String" Nullable="false" />
           <NavigationProperty Name="Advertisement" Relationship="PhysicsAdvertisementsModel.UserAdvertisement" FromRole="User" ToRole="Advertisement" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="Int32" Nullable="false" DefaultValue="0" />
         </EntityType>
         <EntityType Name="Advertisement">
           <Key>
@@ -253,6 +255,7 @@
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

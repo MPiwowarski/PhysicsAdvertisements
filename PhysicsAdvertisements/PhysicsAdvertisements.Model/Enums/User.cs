@@ -14,5 +14,12 @@ namespace PhysicsAdvertisements.Model
             Female,
             Other
         }
+
+        public enum RoleEnum
+        {
+            User,
+            Admin
+            
+        }
     }
 }
