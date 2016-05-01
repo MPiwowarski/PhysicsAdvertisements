@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.ServiceLocation;
+using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Presenters.Account;
 using System;
@@ -14,7 +15,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
     {
         string LoginControl_Text { get; set; }
         string PasswordControl_Text { get; set; }
-
+        string StatusControl_Text { set; }
+        System.Drawing.Color StatusControl_ForeColor { set; }
 
     }
 
@@ -53,6 +55,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
             {
                 LoginControl.Text = value;
             }
+              
         }
 
         public string PasswordControl_Text
@@ -66,11 +69,40 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
                 PasswordControl.Text = value;
             }
         }
+
+        public string StatusControl_Text
+        {
+            set
+            {
+                StatusControl.Text = value;
+            }
+        }
+
+        public System.Drawing.Color StatusControl_ForeColor
+        {
+            set
+            {
+                StatusControl.ForeColor = value;
+            }
+        }
         #endregion
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            _loginPresenter.LoginControl_Click();
+            Session["LoggedUserId"] = _loginPresenter.LoginControl_Click(_userRepo, LoginControl_Text, PasswordControl_Text);
+
+            if (Session["LoggedUserId"] != null)
+            {
+                StatusControl_ForeColor = System.Drawing.Color.Green;
+                StatusControl_Text = "Logged successfully";
+                Response.AddHeader("REFRESH", "1;URL=/Account/User-Data");
+            }
+            else
+            {
+                _loginPresenter.ClearForm();
+                StatusControl_ForeColor = System.Drawing.Color.Red;
+                StatusControl_Text = "Wrong login or password";
+            }
         }
     }
 }

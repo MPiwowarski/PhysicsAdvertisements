@@ -16,10 +16,10 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
     {
         string PasswordControl_Text { get;  }
         string PasswordConfirmationControl_Text { get; }
-        string StatusControl_Text { get; set; }
+        string StatusControl_Text { set; }
         System.Drawing.Color StatusControl_ForeColor { set; }
 
-        RegisterVM RegisterVMFormData { get;}
+        RegisterVM RegisterVMFormData { get; }
     }
 
     public partial class Register : System.Web.UI.Page, IRegisterView
@@ -91,10 +91,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 
         public string StatusControl_Text
         {
-            get
-            {
-                return StatusControl.Text;
-            }
             set
             {
                 StatusControl.Text = value;
