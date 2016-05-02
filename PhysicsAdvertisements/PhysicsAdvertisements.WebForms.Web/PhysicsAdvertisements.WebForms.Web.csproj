@@ -361,7 +361,9 @@
     <Compile Include="Presenters\Account\LoginPresenter.cs" />
     <Compile Include="Presenters\Account\RegisterPresenter.cs" />
     <Compile Include="Presenters\Account\UserDataPresenter.cs" />
+    <Compile Include="Presenters\Global\LoggedUserPresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
+    <Compile Include="Presenters\Shared\SitePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx.cs">
       <DependentUpon>AdvertisementsSearch.ascx</DependentUpon>

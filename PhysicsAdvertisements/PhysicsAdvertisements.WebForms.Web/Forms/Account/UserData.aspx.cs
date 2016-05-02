@@ -2,6 +2,7 @@
 using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Presenters.Account;
+using PhysicsAdvertisements.WebForms.Web.Presenters.Global;
 using PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels;
 using System;
 using System.Collections.Generic;
@@ -47,16 +48,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (Session["LoggedUserId"] == null)
-            {
-                Response.Redirect("/Home");
-            }
+            LoggedUserPresenter.CheckIsUserLooged(this);
 
             //Init HomePresenter
             _userDataPresenter = new UserDataPresenter(this);
 
-            //Init repositories
-            _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
+            //Init Objects
+            _userDataPresenter.InitializeObjects(ref _userRepo);
 
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -74,14 +72,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            if (this.Page.IsValid)
-            {
-                if (_userDataPresenter.CheckIsPasswordsAndPasswordConfirmationAreTheSame())
-                {
-                    _userDataPresenter.EditUserData(_userRepo, UserDataVMFormData, (int)Session["LoggedUserId"]);
-                }
-
-            }
+            _userDataPresenter.SubmitControl_Click(this, _userRepo, UserDataVMFormData);           
         }
 
         #region **********************************   Accessors   **********************************

@@ -44,9 +44,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
             _avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearch;
             _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
 
-            PhysicsAreasDictionary tmp = new PhysicsAreasDictionary() { Name = "Tomek" };
-            _userRepo.Context.PhysicsAreasDictionary.Add(tmp);
-            _userRepo.Save();
         }
         
         protected void Page_Load(object sender, EventArgs e)

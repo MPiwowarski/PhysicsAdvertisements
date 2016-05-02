@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Practices.ServiceLocation;
 using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Forms.Account;
@@ -12,6 +13,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 {
     public interface IUserDataPresenter
     {
+        void InitializeObjects(ref IUserRepo userRepo);
+        void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, UserDataVM userDataVMFormData);
         bool CheckIsPasswordsAndPasswordConfirmationAreTheSame();
         void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId);
         void EditUserData(IUserRepo userRepo, UserDataVM data, int loggedUserId);
@@ -72,6 +75,23 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             _userDataView.PhoneNumberControl_Text = user.PhoneNumber;
             _userDataView.EmailControl_Text = user.Email;
 
+        }
+
+        public void InitializeObjects(ref IUserRepo userRepo)
+        {
+            userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
+        }
+
+        public void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, UserDataVM userDataVMFormData)
+        {
+            if (page.IsValid)
+            {
+                if (CheckIsPasswordsAndPasswordConfirmationAreTheSame())
+                {
+                    EditUserData(userRepo, userDataVMFormData, (int)page.Session["LoggedUserId"]);
+                }
+
+            }
         }
     }
 }
