@@ -58,6 +58,9 @@
                         { %>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <a href="/Account/User-Data">User panel</a>
+                        </li>
+                        <li>
                             <a id="LogOutControl" runat="server" onserverclick="LogOutControl_Click">Log out</a>
                         </li>
                     </ul>

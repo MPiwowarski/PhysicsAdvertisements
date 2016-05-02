@@ -89,20 +89,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            Session["LoggedUserId"] = _loginPresenter.LoginControl_Click(_userRepo, LoginControl_Text, PasswordControl_Text);
-
-            if (Session["LoggedUserId"] != null)
-            {
-                StatusControl_ForeColor = System.Drawing.Color.Green;
-                StatusControl_Text = "Logged successfully";
-                Response.AddHeader("REFRESH", "1;URL=/Account/User-Data");
-            }
-            else
-            {
-                _loginPresenter.ClearForm();
-                StatusControl_ForeColor = System.Drawing.Color.Red;
-                StatusControl_Text = "Wrong login or password";
-            }
+            _loginPresenter.SubmitControl_Click(this, _userRepo, LoginControl_Text, PasswordControl_Text);
         }
     }
 }

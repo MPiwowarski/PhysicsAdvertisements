@@ -1,6 +1,8 @@
 ﻿.advertisements-search {
     overflow:hidden;
     padding:10px;
+    background-color:#f1efef;
+    border-radius:4px;
 }
 
 /*.advertisements-search table td{
@@ -35,3 +37,4 @@
     padding:3px;
     margin-bottom:5px;
 }
+

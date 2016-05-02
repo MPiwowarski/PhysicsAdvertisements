@@ -115,6 +115,7 @@
     <Content Include="App_Scripts\Home\Home.js" />
     <Content Include="App_Styles\Account\Login.css" />
     <Content Include="App_Styles\Account\Register.css" />
+    <Content Include="App_Styles\Account\UserData.css" />
     <Content Include="App_Styles\Home\Contact.css" />
     <Content Include="App_Styles\Home\Help.css" />
     <Content Include="App_Styles\Home\Home.css" />
@@ -294,7 +295,10 @@
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx" />
+    <Content Include="UserControls\AdvertisementsSearch\Layouts\AdvertisementsSearch_UserPanel.css" />
     <Content Include="UserControls\AdvertisementsSearch\Layouts\AdvertisementsSearch.css" />
+    <Content Include="UserControls\UserMenu\ControlTemplates\UserMenu.ascx" />
+    <Content Include="UserControls\UserMenu\Layouts\UserMenu.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +360,7 @@
     </Compile>
     <Compile Include="Presenters\Account\LoginPresenter.cs" />
     <Compile Include="Presenters\Account\RegisterPresenter.cs" />
+    <Compile Include="Presenters\Account\UserDataPresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\AdvertisementsSearch\ControlTemplates\AdvertisementsSearch.ascx.cs">
@@ -367,7 +372,15 @@
     </Compile>
     <Compile Include="UserControls\AdvertisementsSearch\Presenters\AdvertisementsSearchPresenter.cs" />
     <Compile Include="UserControls\AdvertisementsSearch\Views\IAdvertisementsSearchView.cs" />
+    <Compile Include="UserControls\UserMenu\ControlTemplates\UserMenu.ascx.cs">
+      <DependentUpon>UserMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserMenu\ControlTemplates\UserMenu.ascx.designer.cs">
+      <DependentUpon>UserMenu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
+    <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhysicsAdvertisements.Model\PhysicsAdvertisements.Model.csproj">
@@ -385,6 +398,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserControls\AdvertisementsSearch\Data\" />
+    <Folder Include="UserControls\UserMenu\Presenters\" />
+    <Folder Include="UserControls\UserMenu\Views\" />
     <Folder Include="ViewModels\HomeViewModels\" />
   </ItemGroup>
   <PropertyGroup>

@@ -30,6 +30,7 @@
                 <%--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>--%>
                 <asp:Button ID="SubmitControl" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Sign in" OnClick="SubmitControl_Click" />
                 <asp:Label ID="StatusControl" runat="server" Text="" ></asp:Label>
+                <br />
                 <a href="/Home" class="btn-link">Back to Home page</a>
 
             </div>
