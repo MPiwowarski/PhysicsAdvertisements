@@ -13,5 +13,11 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Shared
         {
 
         }
+
+        protected void LogOutControl_Click(object sender, EventArgs e)
+        {
+            Session["LoggedUserId"] = null;
+            Response.Redirect("/Home");
+        }
     }
 }

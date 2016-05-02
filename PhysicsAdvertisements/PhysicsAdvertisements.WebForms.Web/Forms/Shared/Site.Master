@@ -1,60 +1,37 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PhysicsAdvertisements.WebForms.Web.Forms.Shared.Site" %>
 
 <!DOCTYPE html>
+<form id="form1" runat="server">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <link href="../../Content/bootstrap.css" rel="stylesheet" />
+        <link href="../../App_Styles/Shared/Site.css" rel="stylesheet" />
+        <link href="../../Content/themes/base/all.css" rel="stylesheet" /><%--included calendar css--%>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="../../Content/bootstrap.css" rel="stylesheet" />
-    <link href="../../App_Styles/Shared/Site.css" rel="stylesheet" />
-    <link href="../../Content/themes/base/all.css" rel="stylesheet" /> <%--included calendar css--%>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
 
- 
+        <title></title>
+    </head>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <body>
 
-    <title></title>
-</head>
-<body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-   <%-- <div class="row" >
-        <nav class="navbar navbar-default" id="main-menu">                          
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
-                    <span class="sr-only">Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse container" id="collapse">
-
-                <ul class="nav navbar-nav" id="menu-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Contact</a></li>
-
-                    <li><a id="logger-control" href="#">Login</a></li>
-                </ul>
-                
-            </div>
-        </nav>
-    </div>--%>
-    <div class="navbar navbar-inverse navbar-fixed-top" >
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/Home" >Home</a></li>
-                    <li><a href="/Home/Contact" >Contact</a></li>
-                    <li><a href="/Home/Help" >Help</a></li>
-                   <%-- <li class="dropdown">
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Home">Home</a></li>
+                        <li><a href="/Home/Contact">Contact</a></li>
+                        <li><a href="/Home/Help">Help</a></li>
+                        <%-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ogłoszenia <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" class="active">Home</a></li>
@@ -63,38 +40,63 @@
                             <li><a href="#" class="active">Home</a></li>
                         </ul>
                     </li>--%>
-                </ul>
+                    </ul>
 
-                <ul class="nav navbar-nav navbar-right">
+
+                    <% if (Session["LoggedUserId"] == null)
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a id="registerLink" href="/Account/Register">Register</a>
+                        </li>
+                        <li>
+                            <a id="loginLink" href="/Account/Login">Log in</a>
+                        </li>
+                    </ul>
+                    <% }
+                        else
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a id="LogOutControl" runat="server" onserverclick="LogOutControl_Click">Log out</a>
+                        </li>
+                    </ul>
+                    <% } %>
+
+
+
+                    <%--<ul class="nav navbar-nav navbar-right">
                     <li>
                         <a id="registerLink" href="/Account/Register">Register</a>
                     </li>
                     <li>
                         <a id="loginLink" href="/Account/Login">Log in</a>
                     </li>
-                </ul>
+                </ul>--%>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <form id="form1" style="padding:0; padding-top: 50px;" runat="server" class="container body-content">
+        <div class="container">
+
+            <div style="padding: 0; padding-top: 50px;" class="container body-content"></div>
             <div>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-        </form>
-    </div>
 
-    <div class="container body-content">
-        <hr />
-        <footer>
-            <p>&copy; <%= DateTime.Now.Year.ToString() %> - Made by Marcin Piwowarski</p>
-        </footer>
-    </div>
+        </div>
 
-</body>
-</html>
+        <div class="container body-content">
+            <hr />
+            <footer>
+                <p>&copy; <%= DateTime.Now.Year.ToString() %> - Made by Marcin Piwowarski</p>
+            </footer>
+        </div>
+
+    </body>
+    </html>
+</form>
 
 <%--jquery added in Global.asax--%>
 <script src="../../Scripts/jquery-1.9.1.js"></script>
