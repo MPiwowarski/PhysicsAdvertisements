@@ -34,11 +34,11 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
         {
-            //Init HomePresenter
+            //Init Presenters
             _registerPresenter = new RegisterPresenter(this);
 
             //Init repositories
-            _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
+            _registerPresenter.InitializeObjects(ref _userRepo);          
 
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -46,30 +46,20 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
             
         }
         #endregion
-
         
 
-        
         protected void GetTypeName(object sender, EventArgs e)
         {
             DataAnnotationValidator validator = (DataAnnotationValidator)sender;
             validator.SourceTypeName = new RegisterVM().EntityType.AssemblyQualifiedName;
-        }
+        }    
+
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            if (this.Page.IsValid)
-            {
-                if(_registerPresenter.CheckIsPasswordsAndPasswordConfirmationAreTheSame())
-                {
-                    _registerPresenter.Register(_userRepo, RegisterVMFormData);
-                    Response.AddHeader("REFRESH", "1;URL=/Account/Login");
-
-
-                }
-
-            }
+            _registerPresenter.SubmitControl_Click(this,_userRepo,RegisterVMFormData);         
         }
+        
 
         #region **********************************   Accessors   **********************************
         public string PasswordControl_Text

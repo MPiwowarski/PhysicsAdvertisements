@@ -30,11 +30,11 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
         {
-            //Init HomePresenter
+            //Init Presenters
             _loginPresenter = new LoginPresenter(this);
 
-            //Init repositories
-            _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
+            //Init Objects
+            _loginPresenter.InitializeObjects(ref _userRepo);
 
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -42,6 +42,12 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
            
         }
         #endregion
+
+
+        protected void SubmitControl_Click(object sender, EventArgs e)
+        {
+            _loginPresenter.SubmitControl_Click(this, _userRepo, LoginControl_Text, PasswordControl_Text);
+        }
 
 
         #region **********************************   Accessors   **********************************
@@ -87,9 +93,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         }
         #endregion
 
-        protected void SubmitControl_Click(object sender, EventArgs e)
-        {
-            _loginPresenter.SubmitControl_Click(this, _userRepo, LoginControl_Text, PasswordControl_Text);
-        }
+       
     }
 }

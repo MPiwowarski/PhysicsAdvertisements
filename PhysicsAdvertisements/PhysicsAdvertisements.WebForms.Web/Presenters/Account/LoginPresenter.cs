@@ -1,4 +1,5 @@
-﻿using PhysicsAdvertisements.Model;
+﻿using Microsoft.Practices.ServiceLocation;
+using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Forms.Account;
 using System;
@@ -10,6 +11,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 {
     public interface ILoginPresenter
     {
+        void InitializeObjects(ref IUserRepo userRepo);
+
         void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, string login, string password);
 
         int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(IUserRepo _userRepo, string login, string password);
@@ -59,6 +62,12 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
                 _loginView.StatusControl_ForeColor = System.Drawing.Color.Red;
                 _loginView.StatusControl_Text = "Wrong login or password";
             }
+        }
+
+
+        public void InitializeObjects(ref IUserRepo userRepo)
+        {
+            userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
         }
     }
 }
