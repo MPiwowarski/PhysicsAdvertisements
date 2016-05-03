@@ -15,10 +15,10 @@ namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AdvertisementViewModels
         public string Content { get; set; }
 
         [Required(ErrorMessage = "Field required")]
-        public int Category { get; set; }
+        public string Category { get; set; }
 
         [Required(ErrorMessage = "Field required")]
-        public int PhysicsArea { get; set; }
+        public string PhysicsArea { get; set; }
 
 
     }

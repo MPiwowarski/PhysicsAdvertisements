@@ -21,6 +21,9 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
             _container.RegisterType<IPhysicsAdvertisementsDbContext, PhysicsAdvertisementsDbContext>(new PerResolveLifetimeManager());
             _container.RegisterType<IPhysicsAreasDictionaryRepo, PhysicsAreasDictionaryRepo>(new PerResolveLifetimeManager());
             _container.RegisterType<IUserRepo, UserRepo>(new PerResolveLifetimeManager());
+            _container.RegisterType<IPhysicsAreasRepo, PhysicsAreasRepo>(new PerResolveLifetimeManager());
+            _container.RegisterType<ICategoryRepo, CategoryRepo>(new PerResolveLifetimeManager());
+            _container.RegisterType<IAdvertisementRepo, AdvertisementRepo>(new PerResolveLifetimeManager());
         }
 
         //Czy nie lepiej zamiast funkcji TearDown wstrzyknac do konstruktorw Register new PerResolveLifetimeManager()
