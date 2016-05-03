@@ -1,14 +1,18 @@
 ﻿.feedback-form{
-    width:400px;
+    margin:0;
+    padding:0;
+    padding-right:20px;
+}
+.FeedbackContentControl{
+    resize: vertical;
+    width:100%;
+
 }
 
-.FeedbackContentControl{
-    width:400px;
-    height:400px;
-}
+
 
 .feedback-form p{
-    max-width:400px;
+    width:100%;
     text-align: justify;
 }
 

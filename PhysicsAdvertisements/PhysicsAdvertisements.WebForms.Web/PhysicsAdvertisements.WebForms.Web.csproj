@@ -116,6 +116,7 @@
     <Content Include="App_Styles\Account\Login.css" />
     <Content Include="App_Styles\Account\Register.css" />
     <Content Include="App_Styles\Account\UserData.css" />
+    <Content Include="App_Styles\Advertisement\Create.css" />
     <Content Include="App_Styles\Home\Contact.css" />
     <Content Include="App_Styles\Home\Help.css" />
     <Content Include="App_Styles\Home\Home.css" />

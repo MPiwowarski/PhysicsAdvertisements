@@ -97,15 +97,23 @@
             </footer>
         </div>
 
+
+        <%-- **************************************************      SCRIPTS         ************************************************** --%>
+
+        <%--jquery added in Global.asax--%>
+        <script src="../../Scripts/jquery-1.9.1.js"></script>
+        <script src="../../Scripts/jquery-ui-1.11.4.js"></script>
+        <%--included calendar js--%>
+        <script src="../../Scripts/bootstrap.js"></script>
+
+        <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
+        </asp:ContentPlaceHolder>
     </body>
     </html>
 </form>
 
-<%--jquery added in Global.asax--%>
-<script src="../../Scripts/jquery-1.9.1.js"></script>
-<script src="../../Scripts/jquery-ui-1.11.4.js"></script>
-<%--included calendar js--%>
-<script src="../../Scripts/bootstrap.js"></script>
+
+
 
 
 <%--******  FREE LICENSES   *****

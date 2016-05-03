@@ -31,8 +31,8 @@
 
     </div>
     <div class="container">
-        <div class="col-lg-9">
-            <div class="col-xs-4 col-lg-4 extra-money">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 extra-money">
                 <h2>Extra money!
                     
                 </h2>
@@ -44,12 +44,12 @@
               
                 
             </div>
-            <div class="search-container col-xs-8 col-lg-8">
+            <div class="search-container col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <div class="jumbotron">
                     <uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearch" OnSearchBtn_Click_Event="SearchBtn_Click_Event" />
                 </div>
                 <div class="comments-container">
-                    <div class="col-xs-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <img class="img-circle" width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/New/avatar girl.png" />
                         <h2>Jennifer Moss</h2>
                         <p>I love to cooperate with Physics Advertisements service. Everyday I help almost ten people with theirs homework. I'm happy because I always wanted to earn money helping people.
@@ -57,7 +57,7 @@
                         </p>
                   
                     </div>
-                    <div >
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <img class="img-circle" width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/PNG/avatar.png" />
                       
                         <h2>Tom Smith</h2>
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <h4>Recommended books</h4>
             <hr />
             <%--  http://www.bootply.com/61730--%>
@@ -82,23 +82,23 @@
                     <!-- Carousel items -->
                     <div class="carousel-inner">
                         <div class="active item" data-slide-number="0">
-                          <img class="img-rounded img-responsive" src="../../App_Images/Home/MichioKaku.jpg" />
+                          <img class="img-rounded img-responsive" src="../../App_Images/Home/MichioKaku.jpg" style="height:400px;"/>
                         </div>
                         <div class="item" data-slide-number="1">  
-                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Particle%20Physics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Particle%20Physics.jpg" style="height:400px;" />
                         </div>
                         <div class="item" data-slide-number="2">
-                            <img class="img-rounded img-responsive" src="../../App_Images/Home/AnMechanics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/AnMechanics.jpg" style="height:400px;"/>
                         </div>
                         <div class="item" data-slide-number="3">
-                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Physics.jpg" />
+                            <img class="img-rounded img-responsive" src="../../App_Images/Home/Physics.jpg" style="height:400px;"/>
                         </div>                     
                     </div>
 
                 </div>
                 <!-- Carousel nav -->
                 <div class="carousel-controls-mini">
-                    <a href="#myCarousel" data-slide="prev">‹</a>
+                    <a id="tmp" href="#myCarousel" data-slide="prev" class="next-slide">‹</a>
                     <a href="#myCarousel" data-slide="next">›</a>
                 </div>
 
@@ -107,21 +107,42 @@
             </div>
         </div>
     </div>
+    <br />
+    <div class="container">
 
-    <div class="feedback-form" style="float:right;">
-        <ul>
-            <li>Send us your feedback. Write about what you like or don't in our web application.
-            </li>
-            <li>
-                <asp:TextBox runat="server" ID="FeedbackContentControl" Height="90px" TextMode="MultiLine" CssClass="FeedbackContentControl"></asp:TextBox>
-            </li>
-            <li>
-                <asp:Button runat="server" ID="SendFeedbackControl" Text="Send Feedback" OnClick="SendFeedbackControl_Click" CssClass="btn btn-default"></asp:Button>
-            </li>
-        </ul>
+         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-9" style=" margin:0; padding:0">
+            
+             </div>
+        <div class="feedback-form col-xs-12 col-sm-2 col-md-2 col-lg-3">
+            <ul>
+                <li>Send us your feedback. Write about what you like or don't in our web application.
+                </li>
+                <li>
+                    <asp:TextBox runat="server" ID="FeedbackContentControl" Height="90px" TextMode="MultiLine" CssClass="FeedbackContentControl"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:Button runat="server" ID="SendFeedbackControl" Text="Send Feedback" OnClick="SendFeedbackControl_Click" CssClass="btn btn-default"></asp:Button>
+                </li>
+            </ul>
+        </div>
     </div>
+
 
 
 </asp:Content>
 
 
+<asp:Content ID="ScriptsContent" ContentPlaceHolderID="ScriptsContent" runat="server">
+    <script type="text/javascript">
+
+        //$(document).ready(function () {
+        //    $("#tmp").click();
+        //    $("#tmp").click();
+        //    $("#tmp").click();
+        //});
+
+        $('.carousel').carousel({
+            pause: "false"
+        });
+    </script>
+</asp:Content>
