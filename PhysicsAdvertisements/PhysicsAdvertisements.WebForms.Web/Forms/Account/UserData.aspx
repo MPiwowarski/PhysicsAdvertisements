@@ -12,6 +12,7 @@
     <title>User data</title>
 </asp:Content>
 
+<%--https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion--%>
 <asp:Content ID="MainContent" ContentPlaceHolderID="mainContent" runat="server">
     <div class="container">
         <br />
@@ -32,10 +33,10 @@
                     <label>Login</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:TextBox ID="LoginControl" runat="server" CssClass="form-control" placeholder="Login"></asp:TextBox>
+                    <asp:TextBox autocomplete="nope" ID="LoginControl" runat="server" CssClass="form-control" placeholder="Login" ></asp:TextBox>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <validatable:DataAnnotationValidator ID="LoginValidatorControl" runat="server" ControlToValidate="LoginControl" Display="Dynamic"
+                    <validatable:DataAnnotationValidator ID="LoginValidatorControl" runat="server"  ControlToValidate="LoginControl" Display="Dynamic"
                         PropertyToValidate="Login" OnInit="GetTypeName" Text="" CssClass="validation-label" />
                 </div>
             </div>
@@ -45,7 +46,7 @@
                     <label>Password</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:TextBox ID="PasswordControl" runat="server" CssClass="form-control" placeholder="Password" type="password"></asp:TextBox>
+                    <asp:TextBox autocomplete="nope" ID="PasswordControl" runat="server"  CssClass="form-control" placeholder="Password" type="password" ></asp:TextBox>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <validatable:DataAnnotationValidator ID="PasswordValidatorControl" runat="server" ControlToValidate="PasswordControl" Display="Dynamic"
@@ -58,7 +59,7 @@
                     <label>Password confirmation</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:TextBox ID="PasswordConfirmationControl" runat="server" CssClass="form-control" placeholder="Confirm password" type="password"></asp:TextBox>
+                    <asp:TextBox ID="PasswordConfirmationControl" runat="server" CssClass="form-control" placeholder="Confirm password" type="password" ></asp:TextBox>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <validatable:DataAnnotationValidator ID="PasswordConfirmationValidatorControl" runat="server" ControlToValidate="PasswordConfirmationControl" Display="Dynamic"
@@ -185,8 +186,13 @@
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <h3>Enjoy!</h3>
             <hr />
-            <%--<img src="../../App_Images/Account/Register%20banner.png" class="img-responsive" alt="Register banner" />--%>
+            
+            <div style="width:350px; height:540px; border:red 1px solid;">
+
+            </div>
+            
+           <%-- <img src="../../App_Images/Account/Register%20banner.png" class="img-responsive" alt="Register banner" />--%>
         </div>
     </div>
-
+    <script src="../../App_Scripts/Account/DatePicker.js"></script>
 </asp:Content>

@@ -7,10 +7,10 @@
             <a href="/Account/User-Data">User data</a>
         </li>
        <li>
-            <a href="/Account/User-Data">My advertisements</a>
+            <a href="/Advertisement/My-Advertisements">My advertisements</a>
         </li>
         <li>
-            <a href="/Account/User-Data">Create advertisement</a>
+            <a href="/Advertisement/Create">Create advertisement</a>
         </li>
     </ul>
 </div>

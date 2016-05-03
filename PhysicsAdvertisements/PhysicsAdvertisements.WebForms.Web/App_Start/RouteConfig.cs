@@ -30,6 +30,16 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
             routes.MapPageRoute("accountUserData", "Account/UserData.aspx", "~/Forms/Account/UserData.aspx");
             routes.MapPageRoute("UserData", "Account/User-Data", "~/Forms/Account/UserData.aspx");
 
+            //*****     ADVERTISEMENT     *****
+            routes.MapPageRoute("advertisementCreate", "Advertisement/Create.aspx", "~/Forms/Advertisement/Create.aspx");
+            routes.MapPageRoute("Create", "Advertisement/Create", "~/Forms/Advertisement/Create.aspx");
+
+            routes.MapPageRoute("advertisementMyAdvertisements", "Advertisement/MyAdvertisements.aspx", "~/Forms/Advertisement/MyAdvertisements.aspx");
+            routes.MapPageRoute("MyAdvertisements", "Advertisement/My-Advertisements", "~/Forms/Advertisement/MyAdvertisements.aspx");
+
+            routes.MapPageRoute("advertisementSearchResult", "Advertisement/SearchResult.aspx", "~/Forms/Advertisement/SearchResult.aspx");
+            routes.MapPageRoute("SearchResult", "Advertisement/Search-Result", "~/Forms/Advertisement/SearchResult.aspx");
+
         }
     }
 }

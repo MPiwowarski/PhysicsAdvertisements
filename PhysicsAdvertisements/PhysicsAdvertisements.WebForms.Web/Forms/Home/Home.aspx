@@ -108,9 +108,9 @@
         </div>
     </div>
 
-    <div class="feedback-form">
+    <div class="feedback-form" style="float:right;">
         <ul>
-            <li>Send us feedback. Write about what you like or don't in our web application.
+            <li>Send us your feedback. Write about what you like or don't in our web application.
             </li>
             <li>
                 <asp:TextBox runat="server" ID="FeedbackContentControl" Height="90px" TextMode="MultiLine" CssClass="FeedbackContentControl"></asp:TextBox>

@@ -258,6 +258,9 @@
     <Content Include="Forms\Account\Login.aspx" />
     <Content Include="Forms\Account\Register.aspx" />
     <Content Include="Forms\Account\UserData.aspx" />
+    <Content Include="Forms\Advertisement\Create.aspx" />
+    <Content Include="Forms\Advertisement\MyAdvertisements.aspx" />
+    <Content Include="Forms\Advertisement\SearchResult.aspx" />
     <Content Include="Forms\Home\Contact.aspx" />
     <Content Include="Forms\Home\Help.aspx" />
     <Content Include="packages.config" />
@@ -327,6 +330,27 @@
     <Compile Include="Forms\Account\UserData.aspx.designer.cs">
       <DependentUpon>UserData.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Advertisement\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Advertisement\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Advertisement\MyAdvertisements.aspx.cs">
+      <DependentUpon>MyAdvertisements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Advertisement\MyAdvertisements.aspx.designer.cs">
+      <DependentUpon>MyAdvertisements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Advertisement\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Advertisement\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -383,6 +407,7 @@
     </Compile>
     <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModels\CreateVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhysicsAdvertisements.Model\PhysicsAdvertisements.Model.csproj">
