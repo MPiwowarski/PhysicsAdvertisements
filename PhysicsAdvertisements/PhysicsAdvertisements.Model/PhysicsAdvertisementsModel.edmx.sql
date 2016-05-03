@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/01/2016 13:32:28
+-- Date Created: 05/03/2016 11:48:00
 -- Generated from EDMX file: D:\PhysicsAdvertisementsRepo\PhysicsAdvertisements\PhysicsAdvertisements.Model\PhysicsAdvertisementsModel.edmx
 -- --------------------------------------------------
 
@@ -83,7 +83,7 @@ GO
 -- Creating table 'Advertisement'
 CREATE TABLE [dbo].[Advertisement] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [AddedDate] nvarchar(max)  NOT NULL,
+    [AddedDate] datetime  NOT NULL,
     [Title] nvarchar(max)  NOT NULL,
     [Content] nvarchar(max)  NOT NULL,
     [UserId] int  NOT NULL,
