@@ -87,6 +87,7 @@
     <Compile Include="User.cs">
       <DependentUpon>PhysicsAdvertisementsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utils\EncryptingStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

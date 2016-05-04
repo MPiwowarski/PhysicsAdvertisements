@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using PhysicsAdvertisements.Model;
+using PhysicsAdvertisements.Model.Utils;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Forms.Account;
 using System;
@@ -31,8 +32,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 
         public int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(IUserRepo userRepo, string login, string password)
         {
-            
-            int? id= userRepo.Table.Where(x => x.Login.Equals(login) && x.Password.Equals(password)).Select(x => x.Id).FirstOrDefault();
+            password = (new HashingContext()).EncryptPhrase(password);
+            int ? id= userRepo.Table.Where(x => x.Login.Equals(login) && x.Password.Equals(password)).Select(x => x.Id).FirstOrDefault();
             if (id != 0)
                 return id;
             else

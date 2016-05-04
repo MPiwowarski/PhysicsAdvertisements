@@ -54,7 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdvertisementRepo.cs" />
     <Compile Include="Repo\CategoryRepo.cs" />
-    <Compile Include="Repo\PhysicsAreasDictionaryRepo.cs" />
     <Compile Include="Repo\PhysicsAreasRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>

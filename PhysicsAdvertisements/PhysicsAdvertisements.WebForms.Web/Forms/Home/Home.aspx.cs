@@ -24,7 +24,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 
         //Repositories
         private IUserRepo _userRepo;
-        private IPhysicsAreasDictionaryRepo _physicsAreasDictionaryRepo;
+
 
         //UserControls
         private AdvertisementsSearchPresenter _advertisementsSearchPresenter;
@@ -38,7 +38,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 
             //Init repositories
             _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
-            _physicsAreasDictionaryRepo = ServiceLocator.Current.GetInstance<IPhysicsAreasDictionaryRepo>();
 
             //Init
             _avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearch;

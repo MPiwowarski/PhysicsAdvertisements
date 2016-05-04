@@ -1,4 +1,5 @@
 ﻿using PhysicsAdvertisements.Model;
+using PhysicsAdvertisements.Model.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace PhysicsAdvertisements.DatabaseSeeder.Seeds
                 {
                     User user = new User();
                     user.Login = "login" + i;
-                    user.Password = "password" + i;
+                    user.Password = (new HashingContext()).EncryptPhrase("password" + i);
                     user.Name = "userName" + i;
                     user.Surname = "userSurname" + i;
                     

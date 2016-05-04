@@ -19,7 +19,6 @@ namespace PhysicsAdvertisements.WebForms.Web.App_Start
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(_container));
 
             _container.RegisterType<IPhysicsAdvertisementsDbContext, PhysicsAdvertisementsDbContext>(new PerResolveLifetimeManager());
-            _container.RegisterType<IPhysicsAreasDictionaryRepo, PhysicsAreasDictionaryRepo>(new PerResolveLifetimeManager());
             _container.RegisterType<IUserRepo, UserRepo>(new PerResolveLifetimeManager());
             _container.RegisterType<IPhysicsAreasRepo, PhysicsAreasRepo>(new PerResolveLifetimeManager());
             _container.RegisterType<ICategoryRepo, CategoryRepo>(new PerResolveLifetimeManager());
