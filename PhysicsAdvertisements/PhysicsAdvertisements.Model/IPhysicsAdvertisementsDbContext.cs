@@ -14,7 +14,6 @@ namespace PhysicsAdvertisements.Model
         System.Data.Entity.DbSet<Advertisement> Advertisement { get; set; }
         System.Data.Entity.DbSet<Category> Category { get; set; }
         System.Data.Entity.DbSet<PhysicsAreas> PhysicsAreas { get; set; }
-        System.Data.Entity.DbSet<PhysicsAreasDictionary> PhysicsAreasDictionary { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

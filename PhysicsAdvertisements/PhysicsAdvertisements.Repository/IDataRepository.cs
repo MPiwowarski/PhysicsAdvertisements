@@ -1,6 +1,7 @@
 ﻿using PhysicsAdvertisements.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,5 +18,6 @@ namespace PhysicsAdvertisements.Repository
         void Update(T entity);
 
         IPhysicsAdvertisementsDbContext Context { get; }
+        DbSet<T> Table { get; }
     }
 }

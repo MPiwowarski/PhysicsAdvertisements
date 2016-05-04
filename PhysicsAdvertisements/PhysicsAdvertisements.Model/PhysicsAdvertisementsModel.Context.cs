@@ -25,7 +25,6 @@ namespace PhysicsAdvertisements.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<PhysicsAreasDictionary> PhysicsAreasDictionary { get; set; }
         public virtual DbSet<PhysicsAreas> PhysicsAreas { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Advertisement> Advertisement { get; set; }

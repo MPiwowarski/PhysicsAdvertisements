@@ -99,7 +99,7 @@
                     <label>Birthday</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:TextBox ID="BirthdayControl" runat="server" CssClass="form-control datepicker" placeholder="Birthday" type="date"></asp:TextBox>
+                    <asp:TextBox ID="BirthdayControl" runat="server" CssClass="form-control datepicker" placeholder="Birthday"></asp:TextBox>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <validatable:DataAnnotationValidator ID="BirthdayValidatorControl" runat="server" ControlToValidate="BirthdayControl" Display="Dynamic"

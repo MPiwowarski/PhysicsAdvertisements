@@ -79,12 +79,8 @@
     <Compile Include="PhysicsAdvertisementsPartials\Category.cs" />
     <Compile Include="PhysicsAdvertisementsPartials\PhysicsAdvertisementsDbContext.cs" />
     <Compile Include="PhysicsAdvertisementsPartials\PhysicsAreas.cs" />
-    <Compile Include="PhysicsAdvertisementsPartials\PhysicsAreasDictionary.cs" />
     <Compile Include="PhysicsAdvertisementsPartials\User.cs" />
     <Compile Include="PhysicsAreas.cs">
-      <DependentUpon>PhysicsAdvertisementsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PhysicsAreasDictionary.cs">
       <DependentUpon>PhysicsAdvertisementsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,7 @@
 ﻿using PhysicsAdvertisements.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,14 @@ namespace PhysicsAdvertisements.Repository
             get
             {
                 return _db;
+            }
+        }
+        
+        public DbSet<EntityClass> Table
+        {
+            get
+            {
+                return _db.Set<EntityClass>();
             }
         }
 

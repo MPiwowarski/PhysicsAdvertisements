@@ -6,7 +6,6 @@
     <edmx:StorageModels>
     <Schema Namespace="PhysicsAdvertisementsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="PhysicsAdvertisementsModelStoreContainer">
-    <EntitySet Name="PhysicsAreasDictionary" EntityType="PhysicsAdvertisementsModel.Store.PhysicsAreasDictionary" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PhysicsAreas" EntityType="PhysicsAdvertisementsModel.Store.PhysicsAreas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="User" EntityType="PhysicsAdvertisementsModel.Store.User" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Advertisement" EntityType="PhysicsAdvertisementsModel.Store.Advertisement" store:Type="Tables" Schema="dbo" />
@@ -24,13 +23,6 @@
       <End Role="Advertisement" EntitySet="Advertisement" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="PhysicsAreasDictionary">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
   <EntityType Name="PhysicsAreas">
     <Key>
       <PropertyRef Name="Id" />
@@ -113,7 +105,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="PhysicsAdvertisementsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PhysicsAdvertisementsDbContext" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="PhysicsAreasDictionary" EntityType="PhysicsAdvertisementsModel.PhysicsAreasDictionary" />
           <EntitySet Name="PhysicsAreas" EntityType="PhysicsAdvertisementsModel.PhysicsAreas" />
           <EntitySet Name="User" EntityType="PhysicsAdvertisementsModel.User" />
           <EntitySet Name="Advertisement" EntityType="PhysicsAdvertisementsModel.Advertisement" />
@@ -131,13 +122,6 @@
             <End Role="Advertisement" EntitySet="Advertisement" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="PhysicsAreasDictionary">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" />
-        </EntityType>
         <EntityType Name="PhysicsAreas">
           <Key>
             <PropertyRef Name="Id" />
@@ -227,14 +211,6 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PhysicsAdvertisementsModelStoreContainer" CdmEntityContainer="PhysicsAdvertisementsDbContext">
-    <EntitySetMapping Name="PhysicsAreasDictionary">
-      <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.PhysicsAreasDictionary)">
-        <MappingFragment StoreEntitySet="PhysicsAreasDictionary">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PhysicsAreas">
       <EntityTypeMapping TypeName="IsTypeOf(PhysicsAdvertisementsModel.PhysicsAreas)">
         <MappingFragment StoreEntitySet="PhysicsAreas">

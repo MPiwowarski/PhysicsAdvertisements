@@ -20,6 +20,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         System.Drawing.Color StatusControl_ForeColor { set; }
 
         RegisterVM RegisterVMFormData { get; }
+
+        string LoginControl_Text { get; }
     }
 
     public partial class Register : System.Web.UI.Page, IRegisterView
@@ -92,6 +94,14 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
             set
             {
                 StatusControl.ForeColor = value;
+            }
+        }
+
+        public string LoginControl_Text
+        {
+            get
+            {
+                return LoginControl.Text;
             }
         }
 

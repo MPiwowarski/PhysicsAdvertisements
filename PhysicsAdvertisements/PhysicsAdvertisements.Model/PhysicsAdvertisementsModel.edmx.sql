@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/03/2016 11:48:00
+-- Date Created: 05/04/2016 23:33:53
 -- Generated from EDMX file: D:\PhysicsAdvertisementsRepo\PhysicsAdvertisements\PhysicsAdvertisements.Model\PhysicsAdvertisementsModel.edmx
 -- --------------------------------------------------
 
@@ -31,9 +31,6 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[PhysicsAreasDictionary]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PhysicsAreasDictionary];
-GO
 IF OBJECT_ID(N'[dbo].[PhysicsAreas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PhysicsAreas];
 GO
@@ -50,13 +47,6 @@ GO
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
-
--- Creating table 'PhysicsAreasDictionary'
-CREATE TABLE [dbo].[PhysicsAreasDictionary] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL
-);
-GO
 
 -- Creating table 'PhysicsAreas'
 CREATE TABLE [dbo].[PhysicsAreas] (
@@ -102,12 +92,6 @@ GO
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
-
--- Creating primary key on [Id] in table 'PhysicsAreasDictionary'
-ALTER TABLE [dbo].[PhysicsAreasDictionary]
-ADD CONSTRAINT [PK_PhysicsAreasDictionary]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
 
 -- Creating primary key on [Id] in table 'PhysicsAreas'
 ALTER TABLE [dbo].[PhysicsAreas]
