@@ -40,7 +40,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
             _registerPresenter = new RegisterPresenter(this);
 
             //Init repositories
-            _registerPresenter.InitializeObjects(ref _userRepo);          
+            _registerPresenter.InitializeRepoObjects(ref _userRepo);          
 
         }
         protected void Page_Load(object sender, EventArgs e)

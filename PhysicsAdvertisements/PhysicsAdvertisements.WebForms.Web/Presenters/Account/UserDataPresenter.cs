@@ -13,7 +13,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 {
     public interface IUserDataPresenter
     {
-        void InitializeObjects(ref IUserRepo userRepo);
+        void InitializeRepoObjects(ref IUserRepo userRepo);
+
+
         void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, UserDataVM userDataVMFormData);
         bool CheckIsPasswordsAndPasswordConfirmationAreTheSame();
         void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId);
@@ -77,7 +79,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 
         }
 
-        public void InitializeObjects(ref IUserRepo userRepo)
+        public void InitializeRepoObjects(ref IUserRepo userRepo)
         {
             userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
         }

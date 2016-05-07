@@ -13,13 +13,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home {
     public partial class Home {
         
         /// <summary>
-        /// AdvertisementsSearch control.
+        /// AdvertisementsSearchControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearch;
+        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearchControl;
         
         /// <summary>
         /// FeedbackContentControl control.

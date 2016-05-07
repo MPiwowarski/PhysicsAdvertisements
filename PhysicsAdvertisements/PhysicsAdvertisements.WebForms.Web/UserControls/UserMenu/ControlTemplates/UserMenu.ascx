@@ -6,11 +6,12 @@
         <li>
             <a href="/Account/User-Data">User data</a>
         </li>
-       <li>
-            <a href="/Advertisement/My-Advertisements">My advertisements</a>
-        </li>
         <li>
             <a href="/Advertisement/Create">Create advertisement</a>
         </li>
+        <li>
+            <a href="/Advertisement/My-Advertisements">My advertisements</a>
+        </li>
+
     </ul>
 </div>

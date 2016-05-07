@@ -33,9 +33,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <asp:TextBox ID="TitleControl" runat="server" CssClass="form-control" placeholder="Title"></asp:TextBox>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
-                    <validatable:dataannotationvalidator ID="TitleValidatorControl" runat="server" ControlToValidate="TitleControl" Display="Dynamic"
-                     PropertyToValidate="Title" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <validatable:DataAnnotationValidator ID="TitleValidatorControl" runat="server" ControlToValidate="TitleControl" Display="Dynamic"
+                        PropertyToValidate="Title" OnInit="GetTypeName" Text="" CssClass="validation-label" />
                 </div>
             </div>
 
@@ -43,25 +43,25 @@
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <label>Physics area</label>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">                   
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <asp:DropDownList ID="PhysicsAreaControl" runat="server" CssClass="form-control" type="PhysicsArea"></asp:DropDownList>
                 </div>
-                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
-                    <validatable:dataannotationvalidator ID="PhysicsAreaValidatorControl" runat="server" ControlToValidate="PhysicsAreaControl" Display="Dynamic"
-                     PropertyToValidate="PhysicsArea" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <validatable:DataAnnotationValidator ID="PhysicsAreaValidatorControl" runat="server" ControlToValidate="PhysicsAreaControl" Display="Dynamic"
+                        PropertyToValidate="PhysicsArea" OnInit="GetTypeName" Text="" CssClass="validation-label" />
                 </div>
             </div>
 
-             <div class="row">
+            <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <label>Category</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:DropDownList ID="CategoryControl" runat="server" CssClass="form-control" ></asp:DropDownList>
+                    <asp:DropDownList ID="CategoryControl" runat="server" CssClass="form-control"></asp:DropDownList>
                 </div>
-                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
-                    <validatable:dataannotationvalidator ID="CategoryValidatorControl" runat="server" ControlToValidate="CategoryControl" Display="Dynamic"
-                     PropertyToValidate="Category" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <validatable:DataAnnotationValidator ID="CategoryValidatorControl" runat="server" ControlToValidate="CategoryControl" Display="Dynamic"
+                        PropertyToValidate="Category" OnInit="GetTypeName" Text="" CssClass="validation-label" />
                 </div>
             </div>
 
@@ -70,43 +70,42 @@
                     <label>Description</label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:TextBox ID="ContentControl" runat="server" CssClass="form-control" placeholder="Content" TextMode="MultiLine" style="resize: vertical; height:300px;"></asp:TextBox>
+                    <asp:TextBox ID="ContentControl" runat="server" CssClass="form-control" placeholder="Content" TextMode="MultiLine" Style="resize: vertical; height: 300px;"></asp:TextBox>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
-                    <validatable:dataannotationvalidator ID="ContentValidatorControl" runat="server" ControlToValidate="ContentControl" Display="Dynamic"
-                     PropertyToValidate="Content" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <validatable:DataAnnotationValidator ID="ContentValidatorControl" runat="server" ControlToValidate="ContentControl" Display="Dynamic"
+                        PropertyToValidate="Content" OnInit="GetTypeName" Text="" CssClass="validation-label" />
                 </div>
             </div>
 
-             <div class="row">
+            <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:Button ID="SubmitControl" runat="server" Text="Add advertisement" CssClass="btn btn-primary submit" OnClick="SubmitControl_Click" CausesValidation="True" />                   
+                    <asp:Button ID="SubmitControl" runat="server" Text="Add advertisement" CssClass="btn btn-primary submit" OnClick="SubmitControl_Click" CausesValidation="True" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label" ></asp:Label>
-                    
+                    <asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label"></asp:Label>
+
                 </div>
             </div>
 
         </div>
 
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h3>Sample Header</h3>
+            <h3>Enjoy!</h3>
             <hr />
-
-            <div style="width: 350px; height: 540px; border: red 1px solid;">
+            <div style="width: 100%; background-color: #f1efef; height: 540px; border-radius: 5px;">
+                <img src="../../App_Images/Account/create_advertisement_object.png" class="img-responsive" alt="create_advertisement_object.png" style=" width: 70%; margin: auto;" />
             </div>
-
-            <%-- <img src="../../App_Images/Account/Register%20banner.png" class="img-responsive" alt="Register banner" />--%>
+            <%--<div style="width: 350px; height: 540px; border: red 1px solid;">--%>
         </div>
+
+        <%-- <img src="../../App_Images/Account/Register%20banner.png" class="img-responsive" alt="Register banner" />--%>
     </div>
 
 </asp:Content>

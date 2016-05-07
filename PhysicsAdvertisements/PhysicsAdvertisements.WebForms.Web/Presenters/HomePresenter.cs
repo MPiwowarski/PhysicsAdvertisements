@@ -22,8 +22,15 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters
 
         public bool SendFeedback_Click()
         {
-            //wiadomosc wyslano pomyslnie
-            return true;
+            if (_homeView.FeedbackContent_Text != "")
+            {
+                //msg was send successfully
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

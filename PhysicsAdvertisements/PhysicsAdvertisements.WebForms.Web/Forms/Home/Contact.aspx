@@ -17,7 +17,7 @@
 
     <br />
 
-    <div class="contact-items col-xs-4 col-lg-4">
+    <div class="contact-items col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;physics.advertisements@gmail.com
     </div>
 

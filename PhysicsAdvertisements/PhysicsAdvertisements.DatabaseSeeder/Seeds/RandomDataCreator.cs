@@ -53,7 +53,7 @@ namespace PhysicsAdvertisements.DatabaseSeeder.Seeds
 
                     user.Email = "login" + 1 + "@sample.com";
                     user.Gender = rnd.Next(0, 3);
-                    user.PhoneNumber = rnd.Next(1, 10).ToString() + rnd.Next(12345678, 99999999);
+                    user.PhoneNumber = rnd.Next(6, 10).ToString() + rnd.Next(12345678, 99999999);
                     user.Role = (int)User.RoleEnum.User;
 
                     users.Add(user);                                              

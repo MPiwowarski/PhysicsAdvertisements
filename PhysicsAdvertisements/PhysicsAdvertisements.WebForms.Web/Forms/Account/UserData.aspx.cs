@@ -3,6 +3,8 @@ using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Presenters.Account;
 using PhysicsAdvertisements.WebForms.Web.Presenters.Global;
+using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Presenters;
+using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Views;
 using PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels;
 using System;
 using System.Collections.Generic;
@@ -40,10 +42,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         //Presenters
         private IUserDataPresenter _userDataPresenter;
 
+
         //Repositories
         private IUserRepo _userRepo;
 
-
+        //UserControls
+        private AdvertisementsSearchPresenter _advertisementsSearchPresenter;
+        private IAdvertisementsSearchView _avertisementsSearchView;
 
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
@@ -53,8 +58,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
             //Init HomePresenter
             _userDataPresenter = new UserDataPresenter(this);
 
+            _avertisementsSearchView = (IAdvertisementsSearchView)this.AdvertisementsSearchControl;
+            _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
+
             //Init Objects
-            _userDataPresenter.InitializeObjects(ref _userRepo);
+            _userDataPresenter.InitializeRepoObjects(ref _userRepo);
+
+
 
         }
         protected void Page_Load(object sender, EventArgs e)

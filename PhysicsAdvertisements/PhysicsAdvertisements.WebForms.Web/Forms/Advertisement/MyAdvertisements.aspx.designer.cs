@@ -13,13 +13,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement {
     public partial class MyAdvertisements {
         
         /// <summary>
-        /// AdvertisementsSearch control.
+        /// AdvertisementsSearchControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearch;
+        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearchControl;
         
         /// <summary>
         /// UserMenu control.
@@ -29,5 +29,14 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::PhysicsAdvertisements.WebForms.Web.UserControls.UserMenu.ControlTemplates.UserMenu UserMenu;
+        
+        /// <summary>
+        /// MyAdvertisementsGridViewControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView MyAdvertisementsGridViewControl;
     }
 }

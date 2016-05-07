@@ -22,7 +22,9 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.P
 
         public void SearchBtn_Click()
         {
-            //implementacja logiki do wyszkiwania 
+            
+
+
         }
     }
 }

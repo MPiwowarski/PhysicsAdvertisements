@@ -106,7 +106,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Images\Account\create_advertisement_object.png" />
     <Content Include="App_Images\Account\Register banner.png" />
+    <Content Include="App_Images\Account\userdata_object.png" />
     <Content Include="App_Images\Home\AnMechanics.jpg" />
     <Content Include="App_Images\Home\MichioKaku.jpg" />
     <Content Include="App_Images\Home\Particle Physics.jpg" />
@@ -310,6 +312,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityWebFormsBootstrapper.cs" />
     <Compile Include="App_Start\UnityWebFormsStart.cs" />
+    <Compile Include="Data\Advertisement\MyAdvertisementsData.cs" />
     <Compile Include="Forms\Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,6 +390,7 @@
     <Compile Include="Presenters\Account\RegisterPresenter.cs" />
     <Compile Include="Presenters\Account\UserDataPresenter.cs" />
     <Compile Include="Presenters\Advertisement\CreatePresenter.cs" />
+    <Compile Include="Presenters\Advertisement\MyAdvertisementsPresenter.cs" />
     <Compile Include="Presenters\Global\LoggedUserPresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Presenters\Shared\SitePresenter.cs" />

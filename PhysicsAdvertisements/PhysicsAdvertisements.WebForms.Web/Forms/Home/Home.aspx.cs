@@ -40,18 +40,16 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
             _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
 
             //Init
-            _avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearch;
+            _avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearchControl;
             _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
 
         }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (FeedbackContent_Text != "")
-            {
-                _homePresenter.SendFeedback_Click();
-            }
+            _homePresenter.SendFeedback_Click();
+
         }
 
         #endregion
@@ -67,7 +65,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
         {
 
         }
-
         #endregion
 
 

@@ -26,6 +26,8 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.C
             {
                 SearchBtn_Click_Event(sender, e);
             }
+
+            //Response.Redirect("~/Advertisement/Search-Result");
         }
 
 

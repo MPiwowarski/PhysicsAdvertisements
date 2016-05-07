@@ -16,7 +16,7 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="mainContent" runat="server">
     <div class="container">
         <br />
-        <uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearch" />
+        <uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearchControl" />
     </div>
 
     <div class="container user-data">
@@ -186,11 +186,11 @@
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <h3>Enjoy!</h3>
             <hr />
-            
-            <div style="width:350px; height:540px; border:red 1px solid;">
-
+             <div style="width: 100%; background-color: #f1efef; height: 540px;border-radius: 5px;">
+                <img src="../../App_Images/Account/userdata_object.png" class="img-responsive" alt="create_advertisement_object.png" style=" width: 70%; padding-top:10%; margin: auto;" />
             </div>
-            
+            <%--<img src="../../App_Images/Account/userdata_object.png" class="img-responsive" style="background-color:#f1efef; border-radius:5PX; width:100%; "/>--%>
+          
            <%-- <img src="../../App_Images/Account/Register%20banner.png" class="img-responsive" alt="Register banner" />--%>
         </div>
     </div>
