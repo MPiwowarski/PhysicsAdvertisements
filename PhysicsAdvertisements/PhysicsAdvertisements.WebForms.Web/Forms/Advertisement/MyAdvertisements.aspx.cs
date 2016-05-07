@@ -29,10 +29,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
         //Repositories
         private IUserRepo _userRepo;
 
-        //UserControls
-        private AdvertisementsSearchPresenter _advertisementsSearchPresenter;
-        private IAdvertisementsSearchView _avertisementsSearchView;
-
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -40,9 +36,6 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
 
             //Init HomePresenter
             _myAdvertisementsPresenter = new MyAdvertisementsPresenter(this);
-
-            _avertisementsSearchView = (IAdvertisementsSearchView)this.AdvertisementsSearchControl;
-            _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
 
             //Init Objects
             _myAdvertisementsPresenter.InitializeRepoObjects(ref _userRepo);

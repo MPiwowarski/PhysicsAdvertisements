@@ -11,5 +11,32 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement {
     
     
     public partial class SearchResult {
+        
+        /// <summary>
+        /// AdvertisementsSearchControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearchControl;
+        
+        /// <summary>
+        /// StatusControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusControl;
+        
+        /// <summary>
+        /// SearchResultGridViewControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView SearchResultGridViewControl;
     }
 }

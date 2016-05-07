@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validatable", "Validatable\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicsAdvertisements.DatabaseSeeder", "PhysicsAdvertisements.DatabaseSeeder\PhysicsAdvertisements.DatabaseSeeder.csproj", "{99317C04-6E15-4580-BF43-A488335D0906}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{40328C98-D44F-4BAE-B159-E2847427FAC6}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -57,5 +59,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D23D49CD-778E-483F-A11C-77A0D8E7F734} = {40328C98-D44F-4BAE-B159-E2847427FAC6}
 	EndGlobalSection
 EndGlobal

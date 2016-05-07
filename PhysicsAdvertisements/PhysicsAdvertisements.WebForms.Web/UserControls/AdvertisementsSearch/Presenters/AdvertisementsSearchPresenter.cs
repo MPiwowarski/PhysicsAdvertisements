@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.ServiceLocation;
+using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Data.Advertisement;
 using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Views;
@@ -47,12 +48,40 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.P
 
         public void SearchBtnControl_Click(System.Web.UI.UserControl userControl, string selectedCategory, string selectedPhysicsArea, IAdvertisementRepo advertisementRepo, IUserRepo userRepo)
         {
-            List<MyAdvertisementsData> advertisementsSearchResultData = new List<MyAdvertisementsData>();          
+            List<MyAdvertisementsData> advertisementsSearchResultData = new List<MyAdvertisementsData>();
+
+            advertisementsSearchResultData = advertisementRepo.Table.Where(x => x.Category.Name == selectedCategory && x.PhysicsAreas.Name == selectedPhysicsArea)
+                                                .ToList()
+                                                .Join(userRepo.Table,
+                                                ad=>ad.UserId,
+                                                u=> u.Id,
+                                                (ad, u) => new { ad,u }).Select(s=>new MyAdvertisementsData
+                                                { 
+                                                    //Advertisement
+                                                    AddedDate=s.ad.AddedDate,
+                                                    AdvertisementTitle=s.ad.Title,
+                                                    AdvertisementContent=s.ad.Content,
+                                                    AdvertisementCategory= s.ad.Category.Name,
+                                                    AdvertisementPhysicsArea=s.ad.PhysicsAreas.Name,
+                                                    AdvertisementId=s.ad.Id.ToString(),
+                                                    //Exhibitor's(user) data
+                                                    UserImageUrl = s.u.Gender== (int)User.GenderEnum.Female ? "../../ecommerce-icon-set-freepik/New/avatar%20girl.png" : "../../ecommerce-icon-set-freepik/PNG/avatar.png",
+                                                    Name = s.u.Name,
+                                                    Surname = s.u.Surname,
+                                                    Email=  s.u.Email,
+                                                    PhoneNumber=s.u.PhoneNumber,
+                                                    Birthday = s.u.Birthday,
+                                                    
+                                                    
+                                                 })                                                                                            
+                                                .ToList();
 
             userControl.Session["AdvertisementsSearchResultData"] = advertisementsSearchResultData;
 
             userControl.Response.Redirect("~/Advertisement/Search-Result");
         }
+
+        
 
     }
 }

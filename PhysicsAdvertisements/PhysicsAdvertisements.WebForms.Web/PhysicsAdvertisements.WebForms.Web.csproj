@@ -391,6 +391,7 @@
     <Compile Include="Presenters\Account\UserDataPresenter.cs" />
     <Compile Include="Presenters\Advertisement\CreatePresenter.cs" />
     <Compile Include="Presenters\Advertisement\MyAdvertisementsPresenter.cs" />
+    <Compile Include="Presenters\Advertisement\SearchResultPresenter.cs" />
     <Compile Include="Presenters\Global\LoggedUserPresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Presenters\Shared\SitePresenter.cs" />

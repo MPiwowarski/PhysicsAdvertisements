@@ -12,10 +12,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Data.Advertisement
         public string UserImageUrl { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int Age { get; set; }
+        public DateTime Birthday { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-
         //For BulletList item FullNameAndAge in GridView
         public List<string> FullNameAndAge
         {
@@ -42,7 +41,18 @@ namespace PhysicsAdvertisements.WebForms.Web.Data.Advertisement
             }
             
         }
-
+        public int Age
+        {
+            get
+            {
+                return DateTime.Today.Year - Birthday.Year;
+            }
+            set
+            {
+                Age = value;
+            }
+            
+        }
 
         //Hidden field in GridView
         public string AdvertisementId { get; set; }
