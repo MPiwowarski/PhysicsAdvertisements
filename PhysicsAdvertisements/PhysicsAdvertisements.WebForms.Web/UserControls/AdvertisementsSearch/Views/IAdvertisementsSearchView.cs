@@ -8,8 +8,10 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.V
 {
     public interface IAdvertisementsSearchView
     {
-        string PhysicAreaName_Text { get; set; }
-        string CategoryName_Text { get; set; }
-        event EventHandler SearchBtn_Click_Event;
+        string PhysicsAreaControl_Text { get; set; }
+        string CategoryControl_Text { get; set; }
+
+        List<string> CategoryControl_DataSourceWithDataBind { set; }
+        List<string> PhysicsAreaControl_DataSourceWithDataBind { set; }
     }
 }

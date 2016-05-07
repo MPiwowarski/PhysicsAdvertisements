@@ -18,7 +18,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
         string StatusControl_Text { set; }
         System.Drawing.Color StatusControl_ForeColor { set; }
 
+        string ContentControl_Text { set; }
+        string TitleControl_Text { set; }
+
         CreateVM CreateVMFormData { get; }
+
+        List<string> CategoryControl_DataSourceWithDataBind { set; }
+        List<string> PhysicsAreaControl_DataSourceWithDataBind { set; }
     }
 
     public partial class Create : System.Web.UI.Page, ICreateView
@@ -30,6 +36,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
         private IAdvertisementRepo _advertisementRepo;
         private IPhysicsAreasRepo _physicsAreasRepo;
         private ICategoryRepo _categoryRepo;
+        private IUserRepo _userRepo;
 
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
@@ -40,12 +47,12 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
             _createPresenter = new CreatePresenter(this);
 
             //Init Objects
-            _createPresenter.InitializeObjects(ref _advertisementRepo, ref _physicsAreasRepo, ref _categoryRepo);
+            _createPresenter.InitializeObjects(ref _advertisementRepo, ref _physicsAreasRepo, ref _categoryRepo,ref _userRepo);
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _createPresenter.PutDataToControlsDataSource(this, _categoryRepo, _physicsAreasRepo);
         }
         #endregion
 
@@ -57,7 +64,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            _createPresenter.SubmitControl_Click(this, _advertisementRepo, _physicsAreasRepo, _categoryRepo, CreateVMFormData);
+            _createPresenter.SubmitControl_Click(this, _advertisementRepo, _physicsAreasRepo, _categoryRepo, _userRepo, CreateVMFormData);
         }
 
 
@@ -89,6 +96,40 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
                     Category = CategoryControl.SelectedValue,
                     Content = ContentControl.Text
                 };
+            }
+        }
+
+        public List<string> CategoryControl_DataSourceWithDataBind
+        {
+            set
+            {
+                CategoryControl.DataSource = value;
+                CategoryControl.DataBind();
+            }
+        }
+
+        public List<string> PhysicsAreaControl_DataSourceWithDataBind
+        {
+            set
+            {
+                PhysicsAreaControl.DataSource = value;
+                PhysicsAreaControl.DataBind();
+            }
+        }
+
+        public string ContentControl_Text
+        {
+            set
+            {
+                ContentControl.Text = value;
+            }
+        }
+
+        public string TitleControl_Text
+        {
+            set
+            {
+                TitleControl.Text = value;
             }
         }
         #endregion 

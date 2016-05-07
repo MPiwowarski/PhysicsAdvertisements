@@ -21,7 +21,7 @@
         <ul>
 
             <li>
-                <asp:Button ID="SearchBtn" runat="server" Text="Search" OnClick="SearchBtn_Click" CssClass="btn btn-success SearchBtn" />
+                <asp:Button ID="SearchBtnControl" runat="server" Text="Search" OnClick="SearchBtnControl_Click" CssClass="btn btn-success SearchBtn" />
             </li>
         </ul>
     </div>

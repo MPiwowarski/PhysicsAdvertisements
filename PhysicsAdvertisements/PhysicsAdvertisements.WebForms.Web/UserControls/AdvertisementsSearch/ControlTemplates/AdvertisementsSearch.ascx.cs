@@ -1,4 +1,6 @@
-﻿using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Views;
+﻿using PhysicsAdvertisements.Repository.Repo;
+using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Presenters;
+using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,33 +12,50 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.C
 {
     public partial class AdvertisementsSearch : System.Web.UI.UserControl, IAdvertisementsSearchView
     {
-        public AdvertisementsSearch()
+
+        //Presenters
+        private AdvertisementsSearchPresenter _advertisementsSearchPresenter;
+
+
+        //Repositories
+        private IAdvertisementRepo _advertisementRepo;
+        private ICategoryRepo _categoryRepo;
+        private IPhysicsAreasRepo _physicsAreasRepo;
+        private IUserRepo _userRepo;
+
+        #region **********************************   Page life cycle   **********************************
+        protected void Page_Init(object sender, EventArgs e)
         {
+            //Init HomePresenter
+            _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(this);
+
+            //Init Objects
+            _advertisementsSearchPresenter.InitializeRepoObjects(ref _advertisementRepo, ref _categoryRepo, ref _physicsAreasRepo,ref _userRepo);
+
+
 
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _advertisementsSearchPresenter.PutDataToControlsDataSource(this,_categoryRepo, _physicsAreasRepo);
         }
+        #endregion
 
-        protected void SearchBtn_Click(object sender, EventArgs e)
+
+
+        protected void SearchBtnControl_Click(object sender, EventArgs e)
         {
-            if (SearchBtn_Click_Event != null)
-            {
-                SearchBtn_Click_Event(sender, e);
-            }
-
-            //Response.Redirect("~/Advertisement/Search-Result");
+            _advertisementsSearchPresenter.SearchBtnControl_Click(this, CategoryControl_Text, PhysicsAreaControl_Text, _advertisementRepo, _userRepo);
+            
         }
 
 
         #region **********************************   Accessors   **********************************
-        public string PhysicAreaName_Text
+        public string PhysicsAreaControl_Text
         {
             get
             {
-                return PhysicsAreaControl.Text;
+                return PhysicsAreaControl.SelectedValue;
             }
             set
             {
@@ -44,19 +63,38 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.C
             }
         }
 
-        public string CategoryName_Text
+        public string CategoryControl_Text
         {
             get
             {
-                return CategoryControl.Text;
+                return CategoryControl.SelectedValue;
             }
             set
             {
                 CategoryControl.Text = value;
             }
         }
+
+        public List<string> CategoryControl_DataSourceWithDataBind
+        {
+            set
+            {
+                CategoryControl.DataSource = value;
+                CategoryControl.DataBind();
+            }
+        }
+
+        public List<string> PhysicsAreaControl_DataSourceWithDataBind
+        {
+            set
+            {
+                PhysicsAreaControl.DataSource = value;
+                PhysicsAreaControl.DataBind();
+            }
+        }
+
+
         #endregion
 
-        public event EventHandler SearchBtn_Click_Event;
     }
 }

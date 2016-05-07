@@ -46,7 +46,7 @@
             </div>
             <div class="search-container col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <div class="jumbotron">
-                    <uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearchControl" OnSearchBtn_Click_Event="SearchBtn_Click_Event" />
+                    <uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearchControl" />
                 </div>
                 <div class="comments-container">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

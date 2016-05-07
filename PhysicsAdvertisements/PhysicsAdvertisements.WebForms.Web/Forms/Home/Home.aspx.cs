@@ -39,9 +39,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
             //Init repositories
             _userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
 
-            //Init
-            _avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearchControl;
-            _advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
+            ////Init
+            //_avertisementsSearchView = (IAdvertisementsSearchView)AdvertisementsSearchControl;
+            //_advertisementsSearchPresenter = new AdvertisementsSearchPresenter(_avertisementsSearchView);
 
         }
 
@@ -56,10 +56,10 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 
 
         #region **********************************   Controls events   **********************************
-        protected void SearchBtn_Click_Event(object sender, EventArgs e)
-        {
-            _advertisementsSearchPresenter.SearchBtn_Click();
-        }
+        //protected void SearchBtn_Click_Event(object sender, EventArgs e)
+        //{
+        //    _advertisementsSearchPresenter.SearchBtn_Click();
+        //}
 
         protected void SendFeedbackControl_Click(object sender, EventArgs e)
         {

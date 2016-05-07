@@ -31,12 +31,12 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.C
         protected global::System.Web.UI.WebControls.DropDownList CategoryControl;
         
         /// <summary>
-        /// SearchBtn control.
+        /// SearchBtnControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchBtn;
+        protected global::System.Web.UI.WebControls.Button SearchBtnControl;
     }
 }

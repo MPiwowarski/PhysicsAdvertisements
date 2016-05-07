@@ -13,9 +13,11 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Advertisement
 {
     public interface ICreatePresenter
     {
-        void InitializeObjects(ref IAdvertisementRepo advertisementRepo, ref IPhysicsAreasRepo physicsAreasRepo, ref ICategoryRepo categoryRepo);
+        void InitializeObjects(ref IAdvertisementRepo advertisementRepo, ref IPhysicsAreasRepo physicsAreasRepo, ref ICategoryRepo categoryRepo,ref IUserRepo userRepo);
 
-        void SubmitControl_Click(Page page, IAdvertisementRepo advertisementRepo, IPhysicsAreasRepo physicsAreasRepo, ICategoryRepo categoryRepo, CreateVM data);
+        void SubmitControl_Click(Page page, IAdvertisementRepo advertisementRepo, IPhysicsAreasRepo physicsAreasRepo, ICategoryRepo categoryRepo, IUserRepo userRepo, CreateVM data);
+
+        void PutDataToControlsDataSource(Page page,ICategoryRepo categoryRepo, IPhysicsAreasRepo physicsAreasRepo);
     }
 
     public class CreatePresenter : ICreatePresenter
@@ -27,35 +29,54 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Advertisement
             this._createView = createView;
         }
 
-        public void InitializeObjects(ref IAdvertisementRepo advertisementRepo, ref IPhysicsAreasRepo physicsAreasRepo, ref ICategoryRepo categoryRepo)
+        public void InitializeObjects(ref IAdvertisementRepo advertisementRepo, ref IPhysicsAreasRepo physicsAreasRepo, ref ICategoryRepo categoryRepo, ref IUserRepo userRepo)
         {
             advertisementRepo = ServiceLocator.Current.GetInstance<IAdvertisementRepo>();
             physicsAreasRepo = ServiceLocator.Current.GetInstance<IPhysicsAreasRepo>();
             categoryRepo = ServiceLocator.Current.GetInstance<ICategoryRepo>();
+            userRepo = ServiceLocator.Current.GetInstance<IUserRepo>();
         }
 
-        public void SubmitControl_Click(Page page, IAdvertisementRepo advertisementRepo, IPhysicsAreasRepo physicsAreasRepo, ICategoryRepo categoryRepo, CreateVM data)
+        public void SubmitControl_Click(Page page, IAdvertisementRepo advertisementRepo, IPhysicsAreasRepo physicsAreasRepo, ICategoryRepo categoryRepo, IUserRepo userRepo, CreateVM data)
         {
             if (page.IsValid)
             {
                 try
                 {
                     Model.Advertisement advertisement = new Model.Advertisement();
-                    advertisement = Mapper.Map<Model.Advertisement>(data);
-                    advertisement.Category = categoryRepo.Table.Where(x=>x.Name==data.Category).First();
-                    advertisement.PhysicsAreas = physicsAreasRepo.Table.Where(x => x.Name == data.PhysicsArea).First();
+                    advertisement.Content = data.Content;
+                    advertisement.Title = data.Title;
+                    advertisement.AddedDate = DateTime.Now;
+
+                    advertisement.CategoryId = categoryRepo.Table.Where(x=>x.Name==data.Category).Select(x=>x.Id).First();
+                    advertisement.PhysicsAreasId = physicsAreasRepo.Table.Where(x => x.Name == data.PhysicsArea).Select(x => x.Id).First();
+                    int loggedUserId = (int)page.Session["LoggedUserId"];
+                    advertisement.UserId = userRepo.Table.Where(x => x.Id ==loggedUserId).Select(x => x.Id).First();
 
                     advertisementRepo.Insert(advertisement);
                     advertisementRepo.Save();
 
                     _createView.StatusControl_ForeColor = System.Drawing.Color.Green;
                     _createView.StatusControl_Text = "Changes saved successfully";
+                    _createView.ContentControl_Text = "";
+                    _createView.TitleControl_Text = "";
 
                 }
                 catch (Exception e)
                 {
+                    _createView.StatusControl_ForeColor = System.Drawing.Color.Red;
+                    _createView.StatusControl_Text = "Error during Saving:" + e.Message;
                     //logger implementation
                 }
+            }
+        }
+
+        public void PutDataToControlsDataSource(Page page,ICategoryRepo categoryRepo, IPhysicsAreasRepo physicsAreasRepo)
+        {
+            if (!page.IsPostBack)
+            {
+                _createView.CategoryControl_DataSourceWithDataBind = categoryRepo.Table.Select(x => x.Name).ToList();
+                _createView.PhysicsAreaControl_DataSourceWithDataBind = physicsAreasRepo.Table.Select(x => x.Name).ToList();
             }
         }
     }
