@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Practices.ServiceLocation;
 using PhysicsAdvertisements.Model;
+using PhysicsAdvertisements.Model.Utils;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Forms.Account;
 using PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels;
@@ -18,7 +19,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
 
         void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, UserDataVM userDataVMFormData);
         bool CheckIsPasswordsAndPasswordConfirmationAreTheSame();
-        void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId);
+        void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId, System.Web.UI.Page page);
         void EditUserData(IUserRepo userRepo, UserDataVM data, int loggedUserId);
     }
 
@@ -51,7 +52,16 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             try
             {
                 User user = userRepo.GetById(loggedUserId);
-                user = Mapper.Map<User>(data);
+
+                user.Login = data.Login;
+                user.Password = (new HashingContext()).EncryptPhrase(data.Password);                
+                user.Name = data.Name;
+                user.Surname = data.Surname;              
+                //user.Birthday = data.Birthday;
+                user.Gender = data.Gender;
+                user.PhoneNumber = data.PhoneNumber;
+                user.Email = data.Email;
+                userRepo.Update(user);
                 userRepo.Save();
 
 
@@ -61,22 +71,26 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             }
             catch (Exception e)
             {
+                _userDataView.StatusControl_ForeColor = System.Drawing.Color.Red;
+                _userDataView.StatusControl_Text = "There was an error during saving "+e;
                 //logger implementation
             }
         }
 
-        public void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId)
+        public void FillFormFieldsWithUserData(IUserRepo userRepo, int loggedUserId, System.Web.UI.Page page)
         {
-            User user = userRepo.GetById(loggedUserId);
+            if (!page.IsPostBack)
+            {
+                User user = userRepo.GetById(loggedUserId);
 
-            _userDataView.LoginControl_Text = user.Login;
-            _userDataView.NameControl_Text = user.Name;
-            _userDataView.SurnameControl_Text = user.Surname;
-            _userDataView.BirthdayControl_Text = user.Birthday;
-            _userDataView.GenderControl_Text = (User.GenderEnum)user.Gender;
-            _userDataView.PhoneNumberControl_Text = user.PhoneNumber;
-            _userDataView.EmailControl_Text = user.Email;
-
+                _userDataView.LoginControl_Text = user.Login;
+                _userDataView.NameControl_Text = user.Name;
+                _userDataView.SurnameControl_Text = user.Surname;
+                _userDataView.BirthdayControl_Text = user.Birthday;
+                _userDataView.GenderControl_Text = (User.GenderEnum)user.Gender;
+                _userDataView.PhoneNumberControl_Text = user.PhoneNumber;
+                _userDataView.EmailControl_Text = user.Email;
+            }
         }
 
         public void InitializeRepoObjects(ref IUserRepo userRepo)

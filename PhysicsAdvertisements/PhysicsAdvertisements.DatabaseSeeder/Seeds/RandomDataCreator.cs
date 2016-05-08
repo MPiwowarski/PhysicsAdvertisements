@@ -47,8 +47,8 @@ namespace PhysicsAdvertisements.DatabaseSeeder.Seeds
                     user.Name = "userName" + i;
                     user.Surname = "userSurname" + i;
                     
-                    DateTime startDate = new DateTime(1995, 1, 1);
-                    int range = (DateTime.Today - startDate).Days;
+                    DateTime startDate = new DateTime(1980, 1, 1);
+                    int range = (DateTime.Today - startDate).Days-6000;
                     user.Birthday = startDate.AddDays(rnd.Next(range));
 
                     user.Email = "login" + 1 + "@sample.com";
@@ -85,9 +85,9 @@ namespace PhysicsAdvertisements.DatabaseSeeder.Seeds
                     advertisement.Category = _context.Category.Where(x => x.Id == randCategoryId).First();
                     advertisement.PhysicsAreas = _context.PhysicsAreas.Where(x => x.Id == randPhysicsAreasId).First();
 
-                    DateTime startDate = new DateTime(1995, 1, 1);
-                    int range = (DateTime.Today - startDate).Days;
-                    advertisement.AddedDate = startDate.AddDays(rnd.Next(range));
+                    DateTime startDate = new DateTime(2012, 1, 1, 1, 1, 1);
+                    int range = (DateTime.Today - startDate).Seconds;
+                    advertisement.AddedDate = startDate.AddSeconds(rnd.Next(range+100000000));
 
                     advertisement.Content = RandomString(rnd.Next(20,100));
                     //TODO Add random Category and Phycics areas to ad

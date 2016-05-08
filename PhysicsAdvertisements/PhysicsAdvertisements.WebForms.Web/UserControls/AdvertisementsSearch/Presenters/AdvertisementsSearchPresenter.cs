@@ -41,11 +41,15 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.P
         {
             if (!userControl.IsPostBack)
             {
-                _advertisementsSearchView.CategoryControl_DataSourceWithDataBind = categoryRepo.Table.Select(x => x.Name).ToList();
-                _advertisementsSearchView.PhysicsAreaControl_DataSourceWithDataBind = physicsAreasRepo.Table.Select(x => x.Name).ToList();
+                var categories = categoryRepo.Table.Select(x => x.Name).ToList();
+                _advertisementsSearchView.CategoryControl_DataSourceWithDataBind = categories;
+
+                var physicsAreas= physicsAreasRepo.Table.Select(x => x.Name).ToList();
+                _advertisementsSearchView.PhysicsAreaControl_DataSourceWithDataBind = physicsAreas;
             }
         }
 
+        //TODO: move complex queries to repo
         public void SearchBtnControl_Click(System.Web.UI.UserControl userControl, string selectedCategory, string selectedPhysicsArea, IAdvertisementRepo advertisementRepo, IUserRepo userRepo)
         {
             List<MyAdvertisementsData> advertisementsSearchResultData = new List<MyAdvertisementsData>();
@@ -73,7 +77,8 @@ namespace PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.P
                                                     Birthday = s.u.Birthday,
                                                     
                                                     
-                                                 })                                                                                            
+                                                 })
+                                                .OrderByDescending(x => x.AddedDate)
                                                 .ToList();
 
             userControl.Session["AdvertisementsSearchResultData"] = advertisementsSearchResultData;

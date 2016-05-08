@@ -78,6 +78,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Advertisement
                                                            Birthday = s.u.Birthday,
 
                                                        })
+                                                       .OrderByDescending(x => x.AddedDate)
                                                        .ToList();
 
             if (!result.Any())

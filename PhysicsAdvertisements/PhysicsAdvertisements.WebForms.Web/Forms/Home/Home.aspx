@@ -7,7 +7,7 @@
     <link href="../../App_Styles/Home/Home.css" rel="stylesheet" />
     <link href="../../UserControls/AdvertisementsSearch/Layouts/AdvertisementsSearch.css" rel="stylesheet" />
 
-    <title>Home</title>
+    <title>Home Page</title>
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="mainContent" runat="server">

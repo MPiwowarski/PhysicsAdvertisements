@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -9,13 +9,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F784909D-E476-46DC-95C2-588FCB688871}</ProjectGuid>
+    <ProjectGuid>{4859D708-7839-4D4D-9DA1-68AC3F48E20B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PhysicsAdvertisements.MVC.Web</RootNamespace>
     <AssemblyName>PhysicsAdvertisements.MVC.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -48,69 +49,329 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure">
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc">
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
+    <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\PartialModulesViewModels\AdvertisementsSearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="App_Images\Account\create_advertisement_object.png" />
+    <Content Include="App_Images\Account\Register banner.png" />
+    <Content Include="App_Images\Account\userdata_object.png" />
+    <Content Include="App_Images\Home\AnMechanics.jpg" />
+    <Content Include="App_Images\Home\MichioKaku.jpg" />
+    <Content Include="App_Images\Home\Particle Physics.jpg" />
+    <Content Include="App_Images\Home\Physics.jpg" />
+    <Content Include="App_Scripts\Account\DatePicker.js" />
+    <Content Include="App_Scripts\Home\Home.js" />
+    <Content Include="App_Styles\Account\Login.css" />
+    <Content Include="App_Styles\Account\Register.css" />
+    <Content Include="App_Styles\Account\UserData.css" />
+    <Content Include="App_Styles\Advertisement\Create.css" />
+    <Content Include="App_Styles\Home\Contact.css" />
+    <Content Include="App_Styles\Home\Help.css" />
+    <Content Include="App_Styles\Home\Home.css" />
+    <Content Include="App_Styles\PartialModules\AdvertisementsSearch.css" />
+    <Content Include="App_Styles\PartialModules\AdvertisementsSearch_UserPanel.css" />
+    <Content Include="App_Styles\Shared\Site.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="ecommerce-icon-set-freepik\Cover E-commerce.jpg" />
+    <Content Include="ecommerce-icon-set-freepik\New\avatar girl.png" />
+    <Content Include="ecommerce-icon-set-freepik\New\login.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\administrator.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\avatar.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bag.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bank_check.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\bank_terminal.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\barcode.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\basket.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\box_office.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\calculator.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cart.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cart_with_box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\cashbox.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\check.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\clock.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\closed_wallet.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\coin.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\coupon.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_cards.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_card_back.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\credit_card_face.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\discount.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\filter.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\gift.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\handset.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\hanger.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\hourglass.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\info.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\libra.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\loupe.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\mail_box.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\market.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\max.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\messages.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\mobile_payment.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\money.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\monitor.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\open_wallet.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\package.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\pickup_truck.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\pin.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\plane.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\plate.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\purse.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\receiving_money.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\scooter.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\t-shirt.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\tag.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\truck.png" />
+    <Content Include="ecommerce-icon-set-freepik\PNG\website_store.png" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\1.-cart.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\10.-box office.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\11.-closed wallet.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\12.-open wallet.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\13.-purse.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\14.-coin.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\15.-money.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\16.-hourglass.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\17.-receiving money.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\18.-bank check.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\18.-credit card face.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\2.-basket.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\20.-credit card back.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\21.-credit cards.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\22.-mobile payment.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\23.-bank terminal.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\24.-cashbox.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\25.-check.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\26.-barcode.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\27.-calculator.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\28.-t-shirt.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\29.-libra.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\3.-package.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\30.-nag.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\31.-scooter.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\32.-pickup truck.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\33.-truck.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\34.-plane.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\35.-hanger.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\36.-info.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\37.-handset.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\38.-administrator.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\39.-market.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\4.-bag.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\40.-plate.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\41.-monitor.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\42.-website store.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\43.-avatar.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\44.-messages.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\45.-pin.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\46.-clock.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\47.-loupe.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\48.-filter.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\49.-coupon.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\5.-gift.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\50.-discount.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\6.-box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\7.-cart with box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\8.-mail box.svg" />
+    <Content Include="ecommerce-icon-set-freepik\SVG\9.-map.svg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\PartialModules\_AdvertisementsSearch.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\HomeViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -119,13 +380,16 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52550</DevelopmentServerPort>
+          <DevelopmentServerPort>49687</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52550/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -144,11 +408,10 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-  </Target>
-  -->
+  </Target> -->
 </Project>

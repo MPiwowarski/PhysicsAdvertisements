@@ -22,7 +22,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
         bool CheckIsPasswordsAndPasswordConfirmationAreTheSame();
         bool CheckIsLoginFree(IUserRepo userRepo);
 
-        void Register(IUserRepo userRepo, RegisterVM data);
+        void Register(IUserRepo userRepo, RegisterVM data, System.Web.UI.Page page);
     }
 
     public class RegisterPresenter:IRegisterPresenter
@@ -48,23 +48,25 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             }
         }
 
-        public void Register(IUserRepo userRepo, RegisterVM data)
+        public void Register(IUserRepo userRepo, RegisterVM data, System.Web.UI.Page page)
         {
             try
             {
-                User user = new User();
-                user.Password = (new HashingContext()).EncryptPhrase(user.Password);
+                User user = new User();            
                 user = Mapper.Map<User>(data);
+                user.Password = (new HashingContext()).EncryptPhrase(user.Password);
                 userRepo.Insert(user);
                 userRepo.Save();
                      
                 _registerView.StatusControl_ForeColor = System.Drawing.Color.Green;
                 _registerView.StatusControl_Text = "Registration passed successfully";
-                
+                page.Response.AddHeader("REFRESH", "1;URL=/Account/Login");
             }
             catch (Exception e)
             {
                 //logger implementation
+                _registerView.StatusControl_ForeColor = System.Drawing.Color.Red;
+                _registerView.StatusControl_Text = "There was an error during registration";
             }
             
         }
@@ -81,8 +83,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             {
                 if (CheckIsPasswordsAndPasswordConfirmationAreTheSame() && CheckIsLoginFree(userRepo))
                 {
-                    Register(userRepo, registerVMFormData);
-                    page.Response.AddHeader("REFRESH", "1;URL=/Account/Login");
+                    Register(userRepo, registerVMFormData, page);
+                    ;
                 }
 
             }

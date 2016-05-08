@@ -69,7 +69,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            _userDataPresenter.FillFormFieldsWithUserData(_userRepo, (int)Session["LoggedUserId"]);
+            _userDataPresenter.FillFormFieldsWithUserData(_userRepo, (int)Session["LoggedUserId"], this);
         }
         #endregion
 
