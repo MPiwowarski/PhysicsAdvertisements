@@ -31,6 +31,15 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement {
         protected global::PhysicsAdvertisements.WebForms.Web.UserControls.UserMenu.ControlTemplates.UserMenu UserMenu;
         
         /// <summary>
+        /// StatusControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusControl;
+        
+        /// <summary>
         /// MyAdvertisementsGridViewControl control.
         /// </summary>
         /// <remarks>

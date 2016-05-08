@@ -6,6 +6,7 @@ using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Prese
 using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.Views;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
 {
     public interface IMyAdvertisementsView
     {
+        string StatusControl_Text { set; }
+        System.Drawing.Color StatusControl_ForeColor { set; }
+
         object MyAdvertisementsGridViewControl_DataSourceWithDataBind { set; }
     }
 
@@ -28,6 +32,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
 
         //Repositories
         private IUserRepo _userRepo;
+        private IAdvertisementRepo _advertisementRepo;
+
 
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
@@ -38,18 +44,13 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
             _myAdvertisementsPresenter = new MyAdvertisementsPresenter(this);
 
             //Init Objects
-            _myAdvertisementsPresenter.InitializeRepoObjects(ref _userRepo);
+            _myAdvertisementsPresenter.InitializeRepoObjects(ref _userRepo, ref _advertisementRepo);
 
-            //InitializeSearchControl upchac cala logike do prezentera
-
-
-            MyAdvertisementsGridViewControl.DataSource = myAdvertisementsData;
-            MyAdvertisementsGridViewControl.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            _myAdvertisementsPresenter.PutDataToSearchResultGridViewControl(this, (int)this.Session["LoggedUserId"], _userRepo, _advertisementRepo);
         }
         #endregion
 
@@ -57,11 +58,10 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
         #region **********************************   Controls events   **********************************
         protected void MyAdvertisementsGridViewControl_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            
+            _myAdvertisementsPresenter.DeleteSelectedAdvertisement(Convert.ToInt32(((HiddenField)MyAdvertisementsGridViewControl.Rows[e.RowIndex].FindControl("AdvertisementId")).Value),
+                                                                    _advertisementRepo, this, (int)this.Session["LoggedUserId"], _userRepo);
         }
         #endregion
-
-
 
 
 
@@ -74,77 +74,23 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Advertisement
                 MyAdvertisementsGridViewControl.DataBind();
             }
         }
-        #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        List<MyAdvertisementsData> myAdvertisementsData = new List<MyAdvertisementsData>()
+        public string StatusControl_Text
+        {
+            set
             {
-                  new MyAdvertisementsData()
-                  {
-                      AddedDate= DateTime.Now,
-                      UserImageUrl= "../../ecommerce-icon-set-freepik/New/avatar%20girl.png",
-                      Name= "Kate",
-                      Surname="Frog",
-                      Age=28,
+                StatusControl.Text = value;
+            }
+        }
 
-                      AdvertisementId = "34",
-                      AdvertisementPhysicsArea = "PhysicsArea1",
-                      AdvertisementTitle = "Title1",
-                      AdvertisementCategory = "Category1",
-                      AdvertisementContent = "dfdsafkjdsfhkjdsahf ksdjahfkjsahfd ksflkjsaf sakfdhjskjdfhfdshsadkfhdsf lsdkjflksajflkdsfj",
-
-                      Email = "sample@email.com",
-                      PhoneNumber = "512-952-443"
-
-
-                  },
-                   new MyAdvertisementsData()
-                  {
-                      AddedDate= DateTime.Now,
-                      UserImageUrl= "../../ecommerce-icon-set-freepik/New/avatar%20girl.png",
-                      Name= "Kate",
-                      Surname="Frog",
-                      Age=6564,
-
-                      AdvertisementId = "111",
-                      AdvertisementPhysicsArea = "PhysicsArea1",
-                      AdvertisementTitle = "Title1",
-                      AdvertisementCategory = "Category1",
-                      AdvertisementContent = "dfdsafkjdsfhkjdsahf ksdjahfkjsahfd ksflkjsaf sakfdhjskjdfhfdshsadkfhdsf lsdkjflksajflkdsfj",
-
-                      Email = "sample@email.com",
-                      PhoneNumber = "512-952-443"
-
-
-                  }
-            };
+        public Color StatusControl_ForeColor
+        {
+            set
+            {
+                StatusControl.ForeColor = value;
+            }
+        }       
+        #endregion
+       
     }
 }

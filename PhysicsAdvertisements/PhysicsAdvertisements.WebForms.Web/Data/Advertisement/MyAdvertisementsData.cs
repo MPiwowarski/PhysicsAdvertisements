@@ -47,10 +47,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Data.Advertisement
             {
                 return DateTime.Today.Year - Birthday.Year;
             }
-            set
-            {
-                Age = value;
-            }
+            
             
         }
 

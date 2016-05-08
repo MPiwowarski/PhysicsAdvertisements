@@ -41,9 +41,14 @@ namespace PhysicsAdvertisements.Repository
             _db.Set<EntityClass>().Remove(entity);
         }
 
+        public void DeleteById(int id)
+        {
+            _db.Set<EntityClass>().Remove(_db.Set<EntityClass>().First(x => x.Id == id)); 
+        }
+
         public EntityClass GetById(int key)
         {
-            return _db.Set<EntityClass>().FirstOrDefault(x => x.Id == key);
+            return _db.Set<EntityClass>().First(x => x.Id == key);
         }
 
         public void Insert(EntityClass entity)

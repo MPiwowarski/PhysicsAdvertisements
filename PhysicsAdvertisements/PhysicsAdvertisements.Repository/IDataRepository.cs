@@ -12,6 +12,8 @@ namespace PhysicsAdvertisements.Repository
        where T : class, IEntity
     {
         void Delete(T entity);
+        void DeleteById(int id);
+
         T GetById(int id);
         void Insert(T entity);
         void Save();

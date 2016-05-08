@@ -32,10 +32,20 @@
                 list-style-type: none;
                 padding: 0px;
             }
+            .tbl tbody td{
+                   
+                    border-color:white;
+                    border-bottom-color:#ded7d7;
+                }
+            .tbl tr th{
+                border-color:white;
+                border-bottom-color:#ded7d7;
+            }
+                
         </style>
 
         <asp:GridView ID="SearchResultGridViewControl"
-            AutoGenerateColumns="false" runat="server" CssClass="table table-responsive">
+            AutoGenerateColumns="false" runat="server" CssClass="table table-responsive tbl">
 
             <Columns>
                 <asp:BoundField DataField="AddedDate" HeaderText="Added date" ItemStyle-Width="100" />
