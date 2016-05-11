@@ -24,5 +24,19 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
 
             return View();
         }
+
+        public ActionResult UserData()
+        {
+            if (Session["LoggedUserId"] == null) { Response.Redirect("/Home"); }
+
+
+
+            return View();
+        }
+
+      
+
+        
+
     }
 }

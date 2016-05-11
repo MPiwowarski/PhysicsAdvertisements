@@ -400,6 +400,7 @@
     <Content Include="Views\PartialModules\_AdvertisementsSearch.cshtml" />
     <Content Include="Views\Advertisement\SearchResult.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\UserData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControllersLogic\HomeController\" />
