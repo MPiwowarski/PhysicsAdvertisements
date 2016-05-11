@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.HomeViewModels.IndexVM
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -39,12 +40,11 @@
                 Create a free account and create your own advertisements of physics.
             </p>
 
-
         </div>
         <div class="search-container col-xs-12 col-sm-8 col-md-8 col-lg-8">
             <div class="jumbotron">
                 @*<uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearchControl" />*@
-                @Html.Partial("~/Views/PartialModules/_AdvertisementsSearch.cshtml")
+                @Html.Partial("~/Views/PartialModules/_AdvertisementsSearch.cshtml", Model.AdvertisementsSearchPartial)
                 @*< a href="~/Views/PartialModules/_AdvertisementsSearch.cshtml">~/Views/PartialModules/_AdvertisementsSearch.cshtml</a>*@
             </div>
             <div class="comments-container">

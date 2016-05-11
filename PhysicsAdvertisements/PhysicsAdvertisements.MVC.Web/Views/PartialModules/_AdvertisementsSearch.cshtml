@@ -1,28 +1,35 @@
-﻿@*@model  PhysicsAdvertisements.MVC.Web.ViewModels.PartialModulesViewModels.AdvertisementsSearchVM*@
+﻿@model  PhysicsAdvertisements.MVC.Web.ViewModels.PartialModulesViewModels.AdvertisementsSearchVM
 
-<div class="row advertisements-search">
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <ul>
-            <li>Physics areas: </li>
-            <li>
-                @*<asp:DropDownList ID="PhysicsAreaControl"  CssClass="combo-box"></asp:DropDownList>*@
-            </li>
-        </ul>
+
+@using (Html.BeginForm("AdvertisementsSearch", "PartialModules", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row advertisements-search">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <ul>
+                <li>Physics areas: </li>
+                <li>
+                    @Html.DropDownListFor(x => x.SelectedPhysicsArea, Model.PhysicsAreaControlDataSource, new { @class = "combo-box" })
+                    @*<asp:DropDownList ID="PhysicsAreaControl"  CssClass="combo-box"> </asp:DropDownList>*@
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <ul>
+                <li>Category: </li>
+                <li>
+                    @Html.DropDownListFor(x => x.SelectedCategory, Model.CategoryControlDataSource, new { @class = "combo-box" })
+                    @*<asp:DropDownList ID="CategoryControl"  CssClass="combo-box"></asp:DropDownList>*@
+                    @*@Html.DropDownListFor(x => )*@
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <ul>
+                <li>
+                    <button ID="SearchBtnControl" type="submit" class="btn btn-success SearchBtn">Search</button>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <ul>
-            <li>Category: </li>
-            <li>
-                @*<asp:DropDownList ID="CategoryControl"  CssClass="combo-box"></asp:DropDownList>*@
-                @*@Html.DropDownListFor(x => )*@
-            </li>
-        </ul>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <ul>
-            <li>
-                <button ID="SearchBtnControl" class="btn btn-success SearchBtn" >Search</button>
-            </li>
-        </ul>
-    </div>
-</div>
+}

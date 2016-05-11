@@ -198,9 +198,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\Account2Controller.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PartialModulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,9 +212,12 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AccountViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
     <Compile Include="ViewModels\AdvertisementViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModels\SearchResultVM.cs" />
+    <Compile Include="ViewModels\HomeViewModels\IndexVM.cs" />
     <Compile Include="ViewModels\PartialModulesViewModels\AdvertisementsSearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -376,8 +382,8 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login2.cshtml" />
+    <Content Include="Views\Account\Register2.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -392,10 +398,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\PartialModules\_AdvertisementsSearch.cshtml" />
+    <Content Include="Views\Advertisement\SearchResult.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControllersLogic\HomeController\" />
-    <Folder Include="ViewModels\HomeViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
