@@ -1,4 +1,4 @@
-﻿@model PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels.RegisterVM
+﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels.RegisterVM
 @{
     ViewBag.Title = "Register";
 }
@@ -6,12 +6,12 @@
 <link href="~/App_Styles/Account/Register.css" rel="stylesheet" />
 <div class="container register">
     <br />
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-            <h3>Register and join us!</h3>
-            <hr />
-
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <h3>Register and join us!</h3>
+        <hr />
+      
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <label>Login</label>
@@ -19,9 +19,10 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     @*<asp:TextBox ID="LoginControl" runat="server" CssClass="form-control" placeholder="Login"></asp:TextBox>*@
                     @Html.TextBoxFor(x => x.Login, new { @class = "form-control", placeholder = "Login" })
+                    @Html.ValidationMessageFor(x => x.Login)
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.Login)
+                    
                 </div>
             </div>
 
@@ -47,7 +48,7 @@
                     @Html.TextBoxFor(x => x.PasswordConfirmation, new { @class = "form-control", placeholder = "Confirm password", type = "password" })
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.PasswordConfirmation)
+
                 </div>
             </div>
 
@@ -60,7 +61,7 @@
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.Name)
+
                 </div>
             </div>
 
@@ -73,7 +74,7 @@
                     @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", placeholder = "Surname" })
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.Surname)
+
                 </div>
             </div>
 
@@ -89,9 +90,13 @@
                     @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control datepicker", placeholder = "Birthday" })
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.Birthday)
+
                 </div>
             </div>
+
+
+
+
 
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
@@ -126,7 +131,7 @@
                     @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "Phone number" })
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.PhoneNumber)
+
                 </div>
             </div>
 
@@ -136,11 +141,11 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     @*<asp:TextBox ID="EmailControl" runat="server" CssClass="form-control" placeholder="Email" type="email"></asp:TextBox>*@
-                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email", type = "email" })
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email" })
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    @Html.ValidationMessageFor(x => x.Email)
-                </div>
+                @*<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    </div>*@
             </div>
 
 
@@ -154,20 +159,20 @@
                     <button ID="SubmitControl" type="submit" class="btn btn-primary submit">Register</button>
                 </div>
             </div>
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    @*<asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label"></asp:Label>*@
-                    @Html.Label(" ", Model.Status, new { @class = "status-label", Style = "color:red;" })
-
-
-                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                @*<asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label"></asp:Label>*@
+                @Html.Label(" ", Model.Status, new { @class = "status-label", Style = "color:red;" })
+ 
+            
             </div>
         </div>
-    }
+    </div>
+}
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <h3>Check out!</h3>
         <hr />

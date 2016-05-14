@@ -1,13 +1,21 @@
-﻿using System;
+﻿using PhysicsAdvertisements.MVC.Web.ViewModels.PartialModulesViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels
+namespace PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels
 {
     public class UserDataVM 
     {
+        public UserDataVM()
+        {
+            this.AdvertisementsSearchPartial = new AdvertisementsSearchVM();
+        }
+
+        public AdvertisementsSearchVM AdvertisementsSearchPartial { get; set; }
+
         [Required(ErrorMessage = "Field required")]
         public string Login { get; set; }
 

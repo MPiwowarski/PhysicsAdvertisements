@@ -1,0 +1,25 @@
+﻿.user-menu {
+    overflow: hidden;
+    background-color: #f1efef;
+    margin: 1px;
+    margin-bottom:20px;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+.user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-menu ul li {
+    display: inline;
+    margin: 0;
+    padding: 20px;
+}
+
+.user-menu ul li a:hover{
+    text-decoration:none;
+}

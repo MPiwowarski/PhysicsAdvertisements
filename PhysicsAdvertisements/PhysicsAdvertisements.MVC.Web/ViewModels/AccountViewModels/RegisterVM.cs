@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels
+namespace PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels
 {
     public class RegisterVM 
     {

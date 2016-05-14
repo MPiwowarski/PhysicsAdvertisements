@@ -3,7 +3,6 @@ using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Model.Utils;
 using PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels;
 using PhysicsAdvertisements.Repository.Repo;
-using PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +13,18 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private IUserRepo _userRepo;
+        //Repositories
+        private readonly IUserRepo _userRepo;
+        private ICategoryRepo _categoryRepo;
+        private IPhysicsAreasRepo _physicsAreasRepo;
 
-        public AccountController(IUserRepo userRepo)
+        public AccountController(IUserRepo userRepo, ICategoryRepo categoryRepo, IPhysicsAreasRepo physicsAreasRepo)
         {
             this._userRepo = userRepo;
+            this._categoryRepo = categoryRepo;
+            this._physicsAreasRepo = physicsAreasRepo;
         }
+        
 
         // GET: Account
         public ActionResult Login()
@@ -101,7 +106,7 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
                 return View("Error");
 
             }
-            return RedirectToAction("Login");
+            //return RedirectToAction("Login");
 
         }
 
@@ -121,11 +126,71 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
 
         public ActionResult UserData()
         {
-            if (Session["LoggedUserId"] == null) { Response.Redirect("/Home"); }
+            if (Session["LoggedUserId"] == null) { return RedirectToAction("Index", "Home"); }
+            User user = _userRepo.GetById((int)Session["LoggedUserId"]);
+            UserDataVM dataVM = new UserDataVM();
 
-            return View();
+            dataVM.Login= user.Login;
+            dataVM.Name = user.Name;
+            dataVM.Surname =user.Surname;
+            //user.Birthday = data.Birthday;
+            dataVM.Gender = user.Gender;
+            dataVM.PhoneNumber = user.PhoneNumber;
+            dataVM.Email = user.Email;
+
+
+            PartialModulesController partialModulesController = new PartialModulesController(_categoryRepo, _physicsAreasRepo);
+            dataVM.AdvertisementsSearchPartial.CategoryControlDataSource = partialModulesController.GetCategoryControlDataSource();
+            dataVM.AdvertisementsSearchPartial.PhysicsAreaControlDataSource = partialModulesController.GetPhysicsAreaControlDataSource();
+
+
+            return View(dataVM);
         }
 
+        [HttpPost]
+        public ActionResult UserData(UserDataVM data)
+        {
+            if (Session["LoggedUserId"] == null) { return RedirectToAction("Index", "Home"); }
+            if (!ModelState.IsValid)
+            {
+                return View(data);
+            }
 
+            try
+            {
+                User user = _userRepo.GetById((int)Session["LoggedUserId"]);
+
+                user.Login = data.Login;
+                user.Password = (new HashingContext()).EncryptPhrase(data.Password);
+                user.Name = data.Name;
+                user.Surname = data.Surname;
+                //user.Birthday = data.Birthday;
+                user.Gender = data.Gender;
+                user.PhoneNumber = data.PhoneNumber;
+                user.Email = data.Email;
+                _userRepo.Update(user);
+                _userRepo.Save();
+
+
+                //_userDataView.StatusControl_ForeColor = System.Drawing.Color.Green;
+                //_userDataView.StatusControl_Text = "Changes saved successfully";
+
+                data.Status = "Changes saved successfully";
+                data.Password = "";
+                data.PasswordConfirmation = "";
+
+                return View(data);
+
+            }
+            catch (Exception e)
+            {
+                //_userDataView.StatusControl_ForeColor = System.Drawing.Color.Red;
+                //_userDataView.StatusControl_Text = "There was an error during saving " + e;
+                //logger implementation
+                return View("Error");
+            }
+
+            
+        }
     }
 }

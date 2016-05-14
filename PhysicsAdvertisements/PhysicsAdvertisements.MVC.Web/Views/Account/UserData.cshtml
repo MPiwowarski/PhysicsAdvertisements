@@ -1,7 +1,214 @@
-﻿
+﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels.UserDataVM
 @{
-    ViewBag.Title = "UserData";
+    ViewBag.Title = "User-Data";
 }
 
 
 
+<link href="~/App_Styles/PartialModules/AdvertisementsSearch_UserPanel.css" rel="stylesheet" />
+<link href="../../App_Styles/Account/UserData.css" rel="stylesheet" />
+<link href="~/App_Styles/PartialModules/UserMenu.css" rel="stylesheet" />
+<title>User data</title>
+
+
+
+
+<div class="container">
+    <br />
+    @*<uc1:AdvertisementsSearch runat="server" ID="AdvertisementsSearchControl" />*@
+    @Html.Partial("~/Views/PartialModules/_AdvertisementsSearch.cshtml", Model.AdvertisementsSearchPartial)
+    @*<a href="~/Views/PartialModules/_AdvertisementsSearch.cshtml">~/Views/PartialModules/_AdvertisementsSearch.cshtml</a>*@
+</div>
+
+<div class="container user-data">
+    <br />
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <h3>User data</h3>
+        <hr />
+        @*<uc1:UserMenu runat="server" ID="UserMenu" />*@
+        @Html.Partial("~/Views/PartialModules/_UserMenu.cshtml")
+
+        @using (Html.BeginForm("UserData", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Login</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="LoginControl" runat="server" CssClass="form-control" placeholder="Login"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Login, new { @class = "form-control", placeholder = "Login" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Login)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Password</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="PasswordControl" runat="server" CssClass="form-control" placeholder="Password" type="password"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Password", type = "password" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Password confirmation</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="PasswordConfirmationControl" runat="server" CssClass="form-control" placeholder="Confirm password" type="password"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.PasswordConfirmation, new { @class = "form-control", placeholder = "Confirm password", type = "password" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.PasswordConfirmation)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="NameControl" runat="server" CssClass="form-control" placeholder="Name"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Surname</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="SurnameControl" runat="server" CssClass="form-control" placeholder="Surname"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", placeholder = "Surname" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Surname)
+                    </div>
+                </div>
+
+                @*<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Birthday</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="BirthdayControl" runat="server" CssClass="form-control datepicker" placeholder="Birthday"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control datepicker", placeholder = "Birthday", @readonly="readonly" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Birthday)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Gender</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:RadioButtonList ID="GenderControl" runat="server" class="radio-button-list">
+                            <asp:ListItem Value="0" Selected="True"> Male</asp:ListItem>
+                            <asp:ListItem Value="1"> Female</asp:ListItem>
+                            <asp:ListItem Value="2"> Other</asp:ListItem>
+                        </asp:RadioButtonList>*@
+
+                        @Html.DropDownListFor(x => x.Gender, new List<SelectListItem>
+                    {
+                        new SelectListItem {Text="Male", Value="0", Selected=true },
+                        new SelectListItem {Text="Female", Value="1", Selected=true },
+                        new SelectListItem {Text="Other", Value="2", Selected=true },
+                    }, new { @class = " form-control" })
+
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Phone number</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="PhoneNumberControl" runat="server" CssClass="form-control" placeholder="Phone number"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "Phone number" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.PhoneNumber)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <label>Email</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:TextBox ID="EmailControl" runat="server" CssClass="form-control" placeholder="Email" type="email"></asp:TextBox>*@
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email", type = "email" })
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:Button ID="SubmitControl" runat="server" Text="Register" CssClass="btn btn-primary submit" OnClick="SubmitControl_Click" CausesValidation="True" />*@
+                        <button ID="SubmitControl" type="submit" class="btn btn-primary submit">Register</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        @*<asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label"></asp:Label>*@
+                        @Html.Label(" ", Model.Status, new { @class = "status-label", Style = "color:green;" })
+
+
+                    </div>
+                </div>
+            
+        }
+    </div>
+
+
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h3>Enjoy!</h3>
+        <hr />
+        <div style="width: 100%; background-color: #f1efef; height: 540px;border-radius: 5px;">
+            <img src="../../App_Images/Account/userdata_object.png" class="img-responsive" alt="create_advertisement_object.png" style=" width: 70%; padding-top:10%; margin: auto;" />
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    @*<script type="text/javascript" src="~/App_Scripts/Account/DatePicker.js"></script>*@
+
+}

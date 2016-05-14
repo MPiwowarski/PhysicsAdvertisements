@@ -16,11 +16,14 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
         {
             SearchResultVM dataVM = new SearchResultVM();
             
-
-
             return View(dataVM);
         }
 
+
+        public ActionResult Create()
+        {
+            return View();
+        }
 
 
     }

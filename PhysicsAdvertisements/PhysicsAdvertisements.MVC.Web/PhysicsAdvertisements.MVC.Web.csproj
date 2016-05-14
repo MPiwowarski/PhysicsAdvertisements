@@ -239,6 +239,7 @@
     <Content Include="App_Styles\Home\Home.css" />
     <Content Include="App_Styles\PartialModules\AdvertisementsSearch.css" />
     <Content Include="App_Styles\PartialModules\AdvertisementsSearch_UserPanel.css" />
+    <Content Include="App_Styles\PartialModules\UserMenu.css" />
     <Content Include="App_Styles\Shared\Site.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -437,6 +438,8 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\UserData.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\PartialModules\_UserMenu.cshtml" />
+    <Content Include="Views\Advertisement\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
