@@ -4,6 +4,7 @@
 
 .form-control{
     float:left;
+    width:100%; 
 }
 
 .radio-button-list{
@@ -19,10 +20,11 @@
     display: block;
     margin: 0 auto;
     width:100%; 
- 
+
 }
 
 .validation-label{
     color:red;
     font-size:small;
 }
+

@@ -84,7 +84,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
                 if (CheckIsPasswordsAndPasswordConfirmationAreTheSame() && CheckIsLoginFree(userRepo))
                 {
                     Register(userRepo, registerVMFormData, page);
-                    ;
+                    
                 }
 
             }

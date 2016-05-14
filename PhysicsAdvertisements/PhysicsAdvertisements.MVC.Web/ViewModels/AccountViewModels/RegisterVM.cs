@@ -17,7 +17,7 @@ namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels
 
         [Required(ErrorMessage = "Field required")]
         [DataType(DataType.Password)]
-        //[CompareAttribute("Password", ErrorMessage = "Given value is different than Password")] this attribute will not work properly in Validatable lib.    
+        [CompareAttribute("Password", ErrorMessage = "Given value is different than Password")] //this attribute will not work properly in Validatable lib.    
         public string PasswordConfirmation { get; set; }
 
         [Required(ErrorMessage = "Field required")]
@@ -39,8 +39,11 @@ namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels
 
         [Required(ErrorMessage = "Field required")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Inavalid email address")]
+        [EmailAddress]
         public string Email { get; set; }
 
-    
+
+        public string Status { get; set; }
+
     }
 }

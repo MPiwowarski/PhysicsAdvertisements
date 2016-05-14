@@ -23,7 +23,7 @@
         <br />
         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
             <h3>Create advertisement</h3>
-            <hr />
+            <hr />  
             <uc1:UserMenu runat="server" ID="UserMenu" />
 
             <div class="row">

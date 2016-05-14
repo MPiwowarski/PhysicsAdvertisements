@@ -15,6 +15,6 @@ namespace PhysicsAdvertisements.MVC.Web.ViewModels.AccountViewModels
         public string Password { get; set; }
 
         public string Status { get; set; }
-        public string StatusColor { get; set; }
+     
     }
 }
