@@ -1,7 +1,102 @@
-﻿
+﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.AdvertisementViewModels.CreateVM
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create advertisement";
 }
 
-<h2>Create</h2>
+<link href="~/App_Styles/PartialModules/AdvertisementsSearch_UserPanel.css" rel="stylesheet" />
+<link href="../../App_Styles/Advertisement/Create.css" rel="stylesheet" />
+<link href="~/App_Styles/PartialModules/UserMenu.css" rel="stylesheet" />
 
+<div class="container">
+    <br />
+    @Html.Partial("~/Views/PartialModules/_AdvertisementsSearch.cshtml", Model.AdvertisementsSearchPartial)
+</div>
+
+<div class="container create">
+    <br />
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <h3>Create advertisement</h3>
+        <hr />
+        @Html.Partial("~/Views/PartialModules/_UserMenu.cshtml")
+        @using (Html.BeginForm("Create", "Advertisement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>Title</label>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @*<asp:TextBox ID="TitleControl" runat="server" CssClass="form-control" placeholder="Title"></asp:TextBox>*@
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Title" })
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    @Html.ValidationMessageFor(x => x.Title)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>Physics area</label>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @Html.DropDownListFor(x => x.SelectedPhysicsArea, Model.PhysicsAreaControlDataSource, new { @class = "combo-box" })
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    @Html.ValidationMessageFor(x => x.SelectedPhysicsArea)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>Category</label>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @*<asp:DropDownList ID="CategoryControl" runat="server" CssClass="form-control"></asp:DropDownList>*@
+                    @Html.DropDownListFor(x => x.SelectedCategory, Model.CategoryControlDataSource, new { @class = "combo-box" })
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    @Html.ValidationMessageFor(x => x.SelectedCategory)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>Description</label>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @*<asp:TextBox ID="ContentControl" runat="server" CssClass="form-control" placeholder="Content" TextMode="MultiLine" Style="resize: vertical; height: 300px;"></asp:TextBox>*@
+                    @Html.TextAreaFor(x => x.Content, 0, 0, new { @class = "textarea resizer", Style = "resize: vertical; width:100%; height: 300px;", placeholder = "Add description", })
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    @Html.ValidationMessageFor(x => x.Content)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @*<asp:Button ID="SubmitControl" runat="server" Text="Add advertisement" CssClass="btn btn-primary submit" OnClick="SubmitControl_Click" CausesValidation="True" />*@
+                    <button ID="SubmitControl" type="submit" class="btn btn-primary submit">Add advertisement</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    @*<asp:Label ID="StatusControl" runat="server" Text="" CssClass="status-label"></asp:Label>*@
+                    @Html.Label(" ", Model.Status, new { @class = "status-label", Style = "color:green;" })
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h3>Enjoy!</h3>
+        <hr />
+        <div style="width: 100%; background-color: #f1efef; height: 540px; border-radius: 5px;">
+            <img src="../../App_Images/Account/create_advertisement_object.png" class="img-responsive" alt="create_advertisement_object.png" style=" width: 70%; margin: auto;" />
+        </div>
+    </div>
+
+
+</div>
