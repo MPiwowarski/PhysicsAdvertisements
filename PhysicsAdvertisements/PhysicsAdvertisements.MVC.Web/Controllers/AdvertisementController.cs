@@ -31,7 +31,59 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
         public ActionResult SearchResult(string category, string physicsArea)        
         {
             SearchResultVM dataVM = new SearchResultVM();
+            PartialModulesController partialModulesController = new PartialModulesController(_categoryRepo, _physicsAreasRepo);
+            dataVM.AdvertisementsSearchPartial.CategoryControlDataSource = partialModulesController.GetCategoryControlDataSource();
+            dataVM.AdvertisementsSearchPartial.PhysicsAreaControlDataSource = partialModulesController.GetPhysicsAreaControlDataSource();
+
+            if (category==null|| physicsArea == null)
+            {
+                dataVM.StatusColor = "Red";
+                dataVM.Status = "No advertisements was found";
+                return View(dataVM);
+            }
+
+
             
+            var result = _advertisementRepo.Table.Where(x => x.Category.Name == category && x.PhysicsAreas.Name == physicsArea)
+                                                .ToList()
+                                                .Join(_userRepo.Table,
+                                                ad => ad.UserId,
+                                                u => u.Id,
+                                                (ad, u) => new { ad, u }).Select(s => new AdvertisementVM
+                                                {
+                                                    //Advertisement
+                                                    AddedDate = s.ad.AddedDate,
+                                                    AdvertisementTitle = s.ad.Title,
+                                                    AdvertisementContent = s.ad.Content,
+                                                    AdvertisementCategory = s.ad.Category.Name,
+                                                    AdvertisementPhysicsArea = s.ad.PhysicsAreas.Name,
+                                                    AdvertisementId = s.ad.Id.ToString(),
+                                                    //Exhibitor's(user) data
+                                                    UserImageUrl = s.u.Gender == (int)Model.User.GenderEnum.Female ? "../../ecommerce-icon-set-freepik/New/avatar%20girl.png" : "../../ecommerce-icon-set-freepik/PNG/avatar.png",
+                                                    Name = s.u.Name,
+                                                    Surname = s.u.Surname,
+                                                    Email = s.u.Email,
+                                                    PhoneNumber = s.u.PhoneNumber,
+                                                    Birthday = s.u.Birthday,
+
+
+                                                })
+                                                .OrderByDescending(x => x.AddedDate)
+                                                .ToList();
+
+            if (!result.Any())
+            {
+                dataVM.StatusColor = "Red";
+                dataVM.Status = "No advertisements was found";
+            }
+            else
+            {
+                dataVM.SearchResultData = result;
+
+                dataVM.StatusColor = "Green";
+                dataVM.Status = result.Count + " advertisements was found:";
+            }
+
             return View(dataVM);
         }
 
@@ -130,5 +182,89 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
             return data;
 
         }
+
+        public ActionResult DeleteAdvertisement(int? advertisementId)
+        {
+            if (advertisementId == null)
+            {
+                return View("Error");
+            }
+
+            try
+            {
+                _advertisementRepo.DeleteById((int)advertisementId);
+                _advertisementRepo.Save();             
+                return Content("<script language='javascript' type='text/javascript'>alert('Advertisement deleted successfully!'); window.location.replace('MyAdvertisements');</script>");
+
+            }
+            catch (Exception e)
+            {
+                return Content("<script language='javascript' type='text/javascript'>alert('There was an error during deleting the row: "+ e +"'); window.location.replace('MyAdvertisements');</script>");
+            }
+
+        }
+
+
+        public ActionResult MyAdvertisements()
+        {
+            if (Session["LoggedUserId"] == null) { return RedirectToAction("Index", "Home"); }
+
+
+            MyAdvertisementsVM dataVM = new MyAdvertisementsVM();
+            PartialModulesController partialModulesController = new PartialModulesController(_categoryRepo, _physicsAreasRepo);
+            dataVM.AdvertisementsSearchPartial.CategoryControlDataSource = partialModulesController.GetCategoryControlDataSource();
+            dataVM.AdvertisementsSearchPartial.PhysicsAreaControlDataSource = partialModulesController.GetPhysicsAreaControlDataSource();
+
+            int loggedUserId = (int)Session["LoggedUserId"];
+            List<AdvertisementVM> result = _advertisementRepo.Table.Where(x => x.UserId == loggedUserId)
+                                            .ToList()
+                                            .Join(_userRepo.Table,
+                                            ad => ad.UserId,
+                                            u => u.Id,
+                                            (ad, u) => new { ad, u }).Select(s => new AdvertisementVM
+                                            {
+                                                //Advertisement
+                                                AddedDate = s.ad.AddedDate,
+                                                AdvertisementTitle = s.ad.Title,
+                                                AdvertisementContent = s.ad.Content,
+                                                AdvertisementCategory = s.ad.Category.Name,
+                                                AdvertisementPhysicsArea = s.ad.PhysicsAreas.Name,
+                                                AdvertisementId = s.ad.Id.ToString(),
+                                                //Exhibitor's(user) data
+                                                UserImageUrl = s.u.Gender == (int)Model.User.GenderEnum.Female ? "../../ecommerce-icon-set-freepik/New/avatar%20girl.png" : "../../ecommerce-icon-set-freepik/PNG/avatar.png",
+                                                Name = s.u.Name,
+                                                Surname = s.u.Surname,
+                                                Email = s.u.Email,
+                                                PhoneNumber = s.u.PhoneNumber,
+                                                Birthday = s.u.Birthday,
+
+                                            })
+                                            .OrderByDescending(x => x.AddedDate)
+                                            .ToList();
+
+            
+
+            if (!result.Any())
+            {
+                dataVM.StatusColor = "Red";
+                dataVM.Status = "No advertisements was found";
+            }
+            else
+            {
+                dataVM.MyAdvertisements = result;
+
+                dataVM.StatusColor = "Green";
+                dataVM.Status = result.Count + " advertisements was found:";
+            }
+
+
+
+            return View(dataVM);
+        }
+
+
+
+
+      
     }
 }

@@ -6,17 +6,17 @@ using System.Web;
 
 namespace PhysicsAdvertisements.MVC.Web.ViewModels.AdvertisementViewModels
 {
-    public class SearchResultVM
+    public class MyAdvertisementsVM
     {
-        public SearchResultVM()
+        public MyAdvertisementsVM()
         {
-            this.SearchResultData = new List<AdvertisementVM>();
+            this.MyAdvertisements = new List<AdvertisementVM>();
             this.AdvertisementsSearchPartial = new AdvertisementsSearchVM();
         }
 
-        public List<AdvertisementVM> SearchResultData { get; set; }
+        public List<AdvertisementVM> MyAdvertisements { get; set; }
 
-        public string StatusColor { get; set; }
+        public string StatusColor{ get; set; }
         public string Status { get; set; }
 
         public AdvertisementsSearchVM AdvertisementsSearchPartial { get; set; }

@@ -1,10 +1,9 @@
-﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.AdvertisementViewModels.SearchResultVM
+﻿@model PhysicsAdvertisements.MVC.Web.ViewModels.AdvertisementViewModels.MyAdvertisementsVM
 @{
-    ViewBag.Title = "SearchResult";
+    ViewBag.Title = "My advertisements";
 }
-
-
 <link href="~/App_Styles/PartialModules/AdvertisementsSearch_UserPanel.css" rel="stylesheet" />
+<link href="~/App_Styles/PartialModules/UserMenu.css" rel="stylesheet" />
 
 <style>
     .user-img {
@@ -26,13 +25,14 @@
         border-color: white;
         border-bottom-color: #ded7d7;
     }
-
-    .tbl ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    .tbl ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
     }
 </style>
+
+
 
 
 
@@ -44,8 +44,9 @@
 <div class="container user-data">
     <br />
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3>Search result</h3>
+        <h3>My advertisements</h3>
         <hr />
+        @Html.Partial("~/Views/PartialModules/_UserMenu.cshtml")
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @Html.Label(" ", Model.Status, new { @class = "status-label", Style = "color:" + Model.StatusColor + ";" })
@@ -78,16 +79,18 @@
                     <td>
                         <label>Exhibitor's contact data</label>
                     </td>
-                 
+                    <td>
+                        @*Delete buttons*@                      
+                    </td>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach (var item in Model.SearchResultData)
+                @foreach (var item in Model.MyAdvertisements)
                 {
                     <tr>
                         <td>    @Html.DisplayFor(modelItem => item.AddedDate)   </td>
-                        <td>    <img src="@item.UserImageUrl" class="user-img" alt="User image" />   </td>
+                        <td>    <img src="@item.UserImageUrl" class="user-img" alt="User image"/>   </td>
                         <td>
                             <ul>
                                 @foreach (var personalDataItem in item.FullNameAndAge)
@@ -112,12 +115,21 @@
                                 }
                             </ul>
                         </td>
-                       
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteAdvertisement", "Advertisement",new { advertisementId = item.AdvertisementId}, new { @class="btn btn-default"})
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
 
 
+        
+
+
     </div>
 </div>
+
+
+
+

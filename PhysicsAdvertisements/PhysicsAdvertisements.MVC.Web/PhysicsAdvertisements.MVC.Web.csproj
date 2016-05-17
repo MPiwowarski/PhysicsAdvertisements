@@ -216,6 +216,8 @@
     <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
     <Compile Include="ViewModels\AdvertisementViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModels\MyAdvertisementsVM.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModels\MyAdvertisementVM.cs" />
     <Compile Include="ViewModels\AdvertisementViewModels\SearchResultVM.cs" />
     <Compile Include="ViewModels\HomeViewModels\IndexVM.cs" />
     <Compile Include="ViewModels\PartialModulesViewModels\AdvertisementsSearchVM.cs" />
@@ -440,6 +442,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\PartialModules\_UserMenu.cshtml" />
     <Content Include="Views\Advertisement\Create.cshtml" />
+    <Content Include="Views\Advertisement\MyAdvertisements.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
