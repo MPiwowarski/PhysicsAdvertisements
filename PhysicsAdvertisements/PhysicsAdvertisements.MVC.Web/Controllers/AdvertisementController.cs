@@ -109,6 +109,13 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
             if (Session["LoggedUserId"] == null) { return RedirectToAction("Index", "Home"); }
             if (!ModelState.IsValid)
             {
+                dataVM.CategoryControlDataSource = GetCategoryControlDataSource();
+                dataVM.PhysicsAreaControlDataSource = GetPhysicsAreaControlDataSource();
+
+                PartialModulesController partialModulesController = new PartialModulesController(_categoryRepo, _physicsAreasRepo);
+                dataVM.AdvertisementsSearchPartial.CategoryControlDataSource = partialModulesController.GetCategoryControlDataSource();
+                dataVM.AdvertisementsSearchPartial.PhysicsAreaControlDataSource = partialModulesController.GetPhysicsAreaControlDataSource();
+
                 return View(dataVM);
             }
             else

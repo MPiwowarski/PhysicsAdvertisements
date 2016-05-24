@@ -122,7 +122,12 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
             }
         }
 
-
+       
+        public ActionResult Logout()
+        {
+            Session["LoggedUserId"] = null;
+            return RedirectToAction("Index","Home");
+        }
 
         public ActionResult UserData()
         {
@@ -153,6 +158,9 @@ namespace PhysicsAdvertisements.MVC.Web.Controllers
             if (Session["LoggedUserId"] == null) { return RedirectToAction("Index", "Home"); }
             if (!ModelState.IsValid)
             {
+                PartialModulesController partialModulesController = new PartialModulesController(_categoryRepo, _physicsAreasRepo);
+                data.AdvertisementsSearchPartial.CategoryControlDataSource = partialModulesController.GetCategoryControlDataSource();
+                data.AdvertisementsSearchPartial.PhysicsAreaControlDataSource = partialModulesController.GetPhysicsAreaControlDataSource();
                 return View(data);
             }
 
