@@ -109,7 +109,7 @@
         </div>
     </div>
     <br />
-    <div class="container">
+   <%-- <div class="container">
 
          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-9" style=" margin:0; padding:0">
             
@@ -126,7 +126,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>--%>
 
 
 
@@ -136,11 +136,6 @@
 <asp:Content ID="ScriptsContent" ContentPlaceHolderID="ScriptsContent" runat="server">
     <script type="text/javascript">
 
-        //$(document).ready(function () {
-        //    $("#tmp").click();
-        //    $("#tmp").click();
-        //    $("#tmp").click();
-        //});
 
         $('.carousel').carousel({
             pause: "false"

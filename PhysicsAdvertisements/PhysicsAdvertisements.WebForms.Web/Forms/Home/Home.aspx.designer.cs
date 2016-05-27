@@ -20,23 +20,5 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates.AdvertisementsSearch AdvertisementsSearchControl;
-        
-        /// <summary>
-        /// FeedbackContentControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FeedbackContentControl;
-        
-        /// <summary>
-        /// SendFeedbackControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SendFeedbackControl;
     }
 }

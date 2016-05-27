@@ -19,6 +19,7 @@ namespace PhysicsAdvertisements.DatabaseSeeder
 
             Console.WriteLine("Write");
             Console.WriteLine("1 - Insert 100 random users, each user created 4 advertisements (total number of ads: 400)");
+            Console.WriteLine("2 - Insert 1 random users, each user created 4 advertisements (total number of ads: 1)");
 
             int caseSwitch = Convert.ToInt32(Console.ReadLine());
             
@@ -33,6 +34,8 @@ namespace PhysicsAdvertisements.DatabaseSeeder
                     break;
                 case 2:
                     Console.WriteLine("Case 2");
+                    randomDataCreator.CreateRandomUsers(1);
+                    randomDataCreator.CreateRandomAdvertisements(1);
                     break;
                 default:
                     Console.WriteLine("Default case");

@@ -26,7 +26,7 @@ namespace PhysicsAdvertisements.Tests.PhysicsAdvertisements.WebForms.WebTests.Pr
             {
                 new User()
                 {
-                    Login="Login1"
+                    Login="Login1"                   
                 },
                 new User()
                 {
@@ -48,14 +48,11 @@ namespace PhysicsAdvertisements.Tests.PhysicsAdvertisements.WebForms.WebTests.Pr
             registerView.Setup(x => x.UserRepo).Returns(userRepo.Object);
             registerView.Setup(x => x.LoginControl_Text).Returns(givenLogin);
 
-            bool result = false;
+            
 
             //Act
             UnityWebFormsBootstrapper.Initialize();
-            if (registerPresenter.CheckIsLoginFree())
-            {
-                result = true;
-            }
+            bool result = registerPresenter.CheckIsLoginFree();
 
             //Assert
             NUnit.Framework.Assert.IsFalse(result);

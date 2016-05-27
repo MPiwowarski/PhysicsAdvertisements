@@ -15,7 +15,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 {
     public interface IHomeView
     {
-        string FeedbackContent_Text { get; set; }
+        //string FeedbackContent_Text { get; set; }
     }
 
     public partial class Home : System.Web.UI.Page, IHomeView
@@ -48,7 +48,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            _homePresenter.SendFeedback_Click();
+            //_homePresenter.SendFeedback_Click();
 
         }
 
@@ -69,17 +69,17 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Home
 
 
         #region **********************************   Accessors   **********************************
-        public string FeedbackContent_Text
-        {
-            get
-            {
-                return FeedbackContentControl.Text;
-            }
-            set
-            {
-                FeedbackContentControl.Text = value;
-            }
-        }
+        //public string FeedbackContent_Text
+        //{
+        //    get
+        //    {
+        //        return FeedbackContentControl.Text;
+        //    }
+        //    set
+        //    {
+        //        FeedbackContentControl.Text = value;
+        //    }
+        //}
 
         #endregion
 

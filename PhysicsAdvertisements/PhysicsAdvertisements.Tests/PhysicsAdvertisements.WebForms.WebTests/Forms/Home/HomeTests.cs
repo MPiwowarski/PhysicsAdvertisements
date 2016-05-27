@@ -12,26 +12,26 @@ using Moq;
 namespace PhysicsAdvertisements.Tests.PhysicsAdvertisements.WebForms.WebTests.Forms.Home
 {
 
-    [TestClass]
-    public class HomeTests
-    {
-        [TestMethod]
-        public void CheckIfMessageSendProperly_GivenSampleText_ReturnsTrue()
-        {
-            Mock<IHomeView> _homeView=new Mock<IHomeView>();
+    //[TestClass]
+    //public class HomeTests
+    //{
+    //    [TestMethod]
+    //    public void CheckIfMessageSendProperly_GivenSampleText_ReturnsTrue()
+    //    {
+    //        Mock<IHomeView> _homeView=new Mock<IHomeView>();
            
-            HomePresenter _homePresenter = new HomePresenter(_homeView.Object);
+    //        HomePresenter _homePresenter = new HomePresenter(_homeView.Object);
 
 
-            _homeView.Setup(x => x.FeedbackContent_Text).Returns("sample text");
-            var result = false;
+    //        _homeView.Setup(x => x.FeedbackContent_Text).Returns("sample text");
+    //        var result = false;
 
-            if (_homeView.Object.FeedbackContent_Text != "")
-            {
-                result = _homePresenter.SendFeedback_Click();
-            }
+    //        if (_homeView.Object.FeedbackContent_Text != "")
+    //        {
+    //            result = _homePresenter.SendFeedback_Click();
+    //        }
 
-            Assert.IsTrue(result);
-        }
-    }
+    //        Assert.IsTrue(result);
+    //    }
+    //}
 }
