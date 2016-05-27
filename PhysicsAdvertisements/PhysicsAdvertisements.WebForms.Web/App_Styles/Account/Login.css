@@ -60,4 +60,10 @@ a {
     margin-left:0px;
 }
 
-
+.validation-label{
+    color:red;
+    font-size:small;
+}
+.field-validation-error{
+    color:red;
+}

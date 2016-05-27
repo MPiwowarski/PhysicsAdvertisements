@@ -40,7 +40,6 @@ namespace PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels
         [Required(ErrorMessage = "Field required")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Inavalid email address")]
         public string Email { get; set; }
-
-    
+  
     }
 }

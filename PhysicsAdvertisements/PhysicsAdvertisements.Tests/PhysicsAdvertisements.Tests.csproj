@@ -35,11 +35,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -56,18 +85,27 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\FormsTests\AccountTests\LoginTest.cs" />
-    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\FormsTests\AccountTests\RegisterTest.cs" />
-    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\FormsTests\HomeTests\HomeTest.cs" />
+    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\Forms\Home\HomeTests.cs" />
+    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\Presenters\Account\LoginPresenterTests.cs" />
+    <Compile Include="PhysicsAdvertisements.WebForms.WebTests\Presenters\Account\RegisterPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhysicsAdvertisements.Model\PhysicsAdvertisements.Model.csproj">
+      <Project>{58c3e9c9-acb8-4e86-92a0-ae0e27c7576a}</Project>
+      <Name>PhysicsAdvertisements.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhysicsAdvertisements.Repository\PhysicsAdvertisements.Repository.csproj">
+      <Project>{0917ed1e-c18d-4794-a17d-24b5fea5c901}</Project>
+      <Name>PhysicsAdvertisements.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhysicsAdvertisements.WebForms.Web\PhysicsAdvertisements.WebForms.Web.csproj">
       <Project>{4099953d-d9f7-4324-a0f9-01742edd6a39}</Project>
       <Name>PhysicsAdvertisements.WebForms.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

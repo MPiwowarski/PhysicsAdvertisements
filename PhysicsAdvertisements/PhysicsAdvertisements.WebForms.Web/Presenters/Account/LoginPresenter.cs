@@ -14,9 +14,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
     {
         void InitializeObjects(ref IUserRepo userRepo);
 
-        void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, string login, string password);
+        void SubmitControl_Click(System.Web.UI.Page page, string login, string password);
 
-        int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(IUserRepo _userRepo, string login, string password);
+        int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(string login, string password);
         void ClearForm();
     }
 
@@ -30,10 +30,10 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
             this._loginView = loginView;
         }
 
-        public int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(IUserRepo userRepo, string login, string password)
+        public int? CheckIfUserWithGivenLoginAndPasswordExistsInDb(string login, string password)
         {
             password = (new HashingContext()).EncryptPhrase(password);
-            int ? id= userRepo.Table.Where(x => x.Login.Equals(login) && x.Password.Equals(password)).Select(x => x.Id).FirstOrDefault();
+            int ? id= _loginView.UserRepo.Table.Where(x => x.Login.Equals(login) && x.Password.Equals(password)).Select(x => x.Id).FirstOrDefault();
             if (id != 0)
                 return id;
             else
@@ -47,21 +47,24 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
         }
 
 
-        public void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, string login, string password)
+        public void SubmitControl_Click(System.Web.UI.Page page, string login, string password)
         {
-            page.Session["LoggedUserId"] = CheckIfUserWithGivenLoginAndPasswordExistsInDb(userRepo, login, password);
+            if (_loginView.IsPageValid)
+            {
+                page.Session["LoggedUserId"] = CheckIfUserWithGivenLoginAndPasswordExistsInDb(login, password);
 
-            if (page.Session["LoggedUserId"] != null)
-            {
-                _loginView.StatusControl_ForeColor = System.Drawing.Color.Green;
-                _loginView.StatusControl_Text = "Logged successfully";
-                page.Response.Redirect("/Account/User-Data");
-            }
-            else
-            {
-                ClearForm();
-                _loginView.StatusControl_ForeColor = System.Drawing.Color.Red;
-                _loginView.StatusControl_Text = "Wrong login or password";
+                if (page.Session["LoggedUserId"] != null)
+                {
+                    _loginView.StatusControl_ForeColor = System.Drawing.Color.Green;
+                    _loginView.StatusControl_Text = "Logged successfully";
+                    page.Response.Redirect("/Account/User-Data");
+                }
+                else
+                {
+                    ClearForm();
+                    _loginView.StatusControl_ForeColor = System.Drawing.Color.Red;
+                    _loginView.StatusControl_Text = "Wrong login or password";
+                }
             }
         }
 

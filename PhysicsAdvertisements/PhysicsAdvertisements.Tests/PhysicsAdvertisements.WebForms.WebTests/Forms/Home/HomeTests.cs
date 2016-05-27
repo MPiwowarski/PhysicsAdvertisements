@@ -9,11 +9,11 @@ using PhysicsAdvertisements.WebForms.Web.Forms.Home;
 using PhysicsAdvertisements.WebForms.Web.UserControls.AdvertisementsSearch.ControlTemplates;
 using Moq;
 
-namespace PhysicsAdvertisements.Tests.PhysicsAdvertisements.WebForms.WebTests.FormsTests.HomeTests
+namespace PhysicsAdvertisements.Tests.PhysicsAdvertisements.WebForms.WebTests.Forms.Home
 {
 
     [TestClass]
-    public class HomeTest
+    public class HomeTests
     {
         [TestMethod]
         public void CheckIfMessageSendProperly_GivenSampleText_ReturnsTrue()

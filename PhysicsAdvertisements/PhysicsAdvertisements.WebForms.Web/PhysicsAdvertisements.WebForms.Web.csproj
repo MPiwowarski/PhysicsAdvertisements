@@ -412,6 +412,7 @@
     <Compile Include="UserControls\UserMenu\ControlTemplates\UserMenu.ascx.designer.cs">
       <DependentUpon>UserMenu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AccountViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\RegisterVM.cs" />
     <Compile Include="ViewModels\AccountViewModels\UserDataVM.cs" />
     <Compile Include="ViewModels\AdvertisementViewModels\CreateVM.cs" />

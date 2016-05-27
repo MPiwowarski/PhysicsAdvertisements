@@ -2,12 +2,14 @@
 using PhysicsAdvertisements.Model;
 using PhysicsAdvertisements.Repository.Repo;
 using PhysicsAdvertisements.WebForms.Web.Presenters.Account;
+using PhysicsAdvertisements.WebForms.Web.ViewModels.AccountViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Validatable;
 
 namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 {
@@ -18,6 +20,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         string StatusControl_Text { set; }
         System.Drawing.Color StatusControl_ForeColor { set; }
 
+        IUserRepo UserRepo { get; set; }
+        bool IsPageValid { get; set; }
     }
 
     public partial class Login : System.Web.UI.Page, ILoginView
@@ -26,6 +30,22 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
 
         //Repositories
         private IUserRepo _userRepo;
+
+        private bool _isPageValid;
+
+        public bool IsPageValid
+        {
+            get { return this.IsValid; }
+            set { _isPageValid = value; }
+        }
+        
+
+        public IUserRepo UserRepo
+        {
+            get { return _userRepo; }
+            set { _userRepo = value; }
+        }
+
 
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)
@@ -42,11 +62,15 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
            
         }
         #endregion
-
+        protected void GetTypeName(object sender, EventArgs e)
+        {
+            DataAnnotationValidator validator = (DataAnnotationValidator)sender;
+            validator.SourceTypeName = new LoginVM().EntityType.AssemblyQualifiedName;
+        }
 
         protected void SubmitControl_Click(object sender, EventArgs e)
         {
-            _loginPresenter.SubmitControl_Click(this, _userRepo, LoginControl_Text, PasswordControl_Text);
+            _loginPresenter.SubmitControl_Click(this, LoginControl_Text, PasswordControl_Text);
         }
 
 

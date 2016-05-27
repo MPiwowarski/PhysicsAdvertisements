@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
     <link href="../../App_Styles/Account/Login.css" rel="stylesheet" />
+   
     <title>Login</title>
 </head>
 <body>
@@ -16,11 +17,19 @@
                 <img  width="140" height="140" alt="Generic placeholder image" src="../../ecommerce-icon-set-freepik/New/login.png" />
                 <h2 class="form-signin-heading">Please sign in</h2>
                 <label class="sr-only" for="inputEmail">Email address</label>
-                <%--<input id="inputEmail" class="form-control" type="email" autofocus="" required="" placeholder="Email address" />--%>
+         
                 <asp:TextBox ID="LoginControl" runat="server" CssClass="form-control"  placeholder="Login"></asp:TextBox>
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
+                    <validatable:dataannotationvalidator ID="LoginValidatorControl" runat="server" ControlToValidate="LoginControl" Display="Dynamic"
+                     PropertyToValidate="Login" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                </div>
                 <label class="sr-only" for="inputPassword">Password</label>
-               <%-- <input id="inputPassword" class="form-control" type="password" required="" placeholder="Password" />--%>
+       
                 <asp:TextBox ID="PasswordControl" runat="server" CssClass="form-control" type="password" placeholder="Password"></asp:TextBox>
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
+                    <validatable:dataannotationvalidator ID="PasswordValidatorControl" runat="server" ControlToValidate="PasswordControl" Display="Dynamic"
+                     PropertyToValidate="Password" OnInit="GetTypeName" Text="" CssClass="validation-label"/>
+                </div>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" />

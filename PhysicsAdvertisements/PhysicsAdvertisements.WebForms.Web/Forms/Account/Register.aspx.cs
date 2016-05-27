@@ -22,6 +22,8 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         RegisterVM RegisterVMFormData { get; }
 
         string LoginControl_Text { get; }
+
+        IUserRepo UserRepo { get; set; }
     }
 
     public partial class Register : System.Web.UI.Page, IRegisterView
@@ -32,6 +34,11 @@ namespace PhysicsAdvertisements.WebForms.Web.Forms.Account
         //Repositories
         private IUserRepo _userRepo;
 
+        public IUserRepo UserRepo
+        {
+            get { return _userRepo; }
+            set { _userRepo = value; }
+        }
 
         #region **********************************   Page life cycle   **********************************
         protected void Page_Init(object sender, EventArgs e)

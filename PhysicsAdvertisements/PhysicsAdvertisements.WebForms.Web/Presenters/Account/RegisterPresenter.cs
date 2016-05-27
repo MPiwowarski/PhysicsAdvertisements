@@ -20,7 +20,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
         void SubmitControl_Click(System.Web.UI.Page page, IUserRepo userRepo, RegisterVM registerVMFormData);
 
         bool CheckIsPasswordsAndPasswordConfirmationAreTheSame();
-        bool CheckIsLoginFree(IUserRepo userRepo);
+        bool CheckIsLoginFree();
 
         void Register(IUserRepo userRepo, RegisterVM data, System.Web.UI.Page page);
     }
@@ -81,7 +81,7 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
         {
             if (page.IsValid)
             {
-                if (CheckIsPasswordsAndPasswordConfirmationAreTheSame() && CheckIsLoginFree(userRepo))
+                if (CheckIsPasswordsAndPasswordConfirmationAreTheSame() && CheckIsLoginFree())
                 {
                     Register(userRepo, registerVMFormData, page);
                     
@@ -91,9 +91,9 @@ namespace PhysicsAdvertisements.WebForms.Web.Presenters.Account
         }
 
 
-        public bool CheckIsLoginFree(IUserRepo userRepo)
+        public bool CheckIsLoginFree()
         {
-            if (userRepo.Table.Where(x => x.Login == _registerView.LoginControl_Text).FirstOrDefault() == null)
+            if (_registerView.UserRepo.Table.Where(x => x.Login == _registerView.LoginControl_Text).FirstOrDefault() == null)
             {
                 return true;
             }
