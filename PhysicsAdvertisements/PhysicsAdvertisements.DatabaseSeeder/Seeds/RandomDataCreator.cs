@@ -77,9 +77,9 @@ namespace PhysicsAdvertisements.DatabaseSeeder.Seeds
                     Advertisement advertisement = new Advertisement();
                     advertisement.Title = "Title" + i;
 
-                    int randUserId = rnd.Next(_context.User.ToList().Min(y => y.Id), _context.User.Max(y => y.Id)+1);
-                    int randCategoryId = rnd.Next(_context.Category.Min(y => y.Id), _context.Category.Max(y => y.Id)+1);
-                    int randPhysicsAreasId = rnd.Next(_context.PhysicsAreas.Min(y => y.Id), _context.PhysicsAreas.Max(y => y.Id)+1);
+                    int randUserId = rnd.Next(_context.User.ToList().Min(y => y.Id), _context.User.Max(y => y.Id));
+                    int randCategoryId = rnd.Next(_context.Category.Min(y => y.Id), _context.Category.Max(y => y.Id));
+                    int randPhysicsAreasId = rnd.Next(_context.PhysicsAreas.Min(y => y.Id), _context.PhysicsAreas.Max(y => y.Id));
 
                     advertisement.User = _context.User.Where(x => x.Id == randUserId).First();
                     advertisement.Category = _context.Category.Where(x => x.Id == randCategoryId).First();
